@@ -1,11 +1,9 @@
 package com.gusoliveira.domain.entities
 
-import java.text.DecimalFormat
-
-data class Product(
-    var id:String,
+data class ProductEntity(
+    var id:Int,
     var title:String,
-    var price:DecimalFormat,
+    var price:Double,
     var description: String,
     var category:String,
     var image:String,
