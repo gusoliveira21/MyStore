@@ -37,6 +37,14 @@ dependencies {
     implementation dependencies.koin
     implementation dependencies.coroutineCore
     implementation dependencies.coroutineAndroid
+
+    def testDependencies = rootProject.ext.testDependencies
+    implementation testDependencies.testCoroutine
+    implementation testDependencies.testJunit
+    implementation testDependencies.testMockk
+    implementation testDependencies.testMockitoCore
+    implementation testDependencies.testAssertkJvm
+    implementation testDependencies.androidTestCoroutine
 }
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+//sourceCompatibility = JavaVersion.VERSION_1_8
+//targetCompatibility = JavaVersion.VERSION_1_8
