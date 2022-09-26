@@ -1,6 +1,5 @@
 package com.gusoliveira.data.api
 
-import com.gusoliveira.data.model.Product
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,5 +11,5 @@ class RetrofitInitializer {
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-    fun getRetrofitService(): Service = retrofit.create(Service::class.java)
+    fun getRetrofitService(): MyStoreService = retrofit.create(MyStoreService::class.java)
 }
