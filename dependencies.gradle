@@ -23,17 +23,17 @@ ext {
 
 
     dependencies = [
-            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
-            rxJava          : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-            koin            : "org.koin:koin-android:$koinVersion",
-            rxKotlin        : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
-            rxAndroid       : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            coroutineCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
-            coroutineAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",
-            core            : "androidx.core:core-ktx:$coreVersion",
-            appCompact      : "androidx.appcompat:appcompat:$appCompactVersion",
-            androidMaterial : "com.google.android.material:material:$androidMaterialVersion",
-            retrofit2Retrofit: "com.squareup.retrofit2:retrofit:$retrofit2",
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            rxJava                : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            koin                  : "org.koin:koin-android:$koinVersion",
+            rxKotlin              : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            rxAndroid             : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            coroutineCore         : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
+            coroutineAndroid      : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",
+            core                  : "androidx.core:core-ktx:$coreVersion",
+            appCompact            : "androidx.appcompat:appcompat:$appCompactVersion",
+            androidMaterial       : "com.google.android.material:material:$androidMaterialVersion",
+            retrofit2Retrofit     : "com.squareup.retrofit2:retrofit:$retrofit2",
             retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$retrofit2"
     ]
 

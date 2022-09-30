@@ -8,9 +8,9 @@ sealed class DataResult<out T>{
     val isFailure get() = this is Failure
     val success get() = (this is Success<T>)
 
-    fun handleResult(sucess:(T) -> Unit, error:() -> Unit){
+    fun handleResult(success:(T) -> Unit, error:() -> Unit){
         when (this){
-            is Success -> sucess(data)
+            is Success -> success(data)
             is Failure -> error()
         }
     }

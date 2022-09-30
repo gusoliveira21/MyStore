@@ -6,8 +6,11 @@ import com.gusoliveira.domain.usecase.base.BaseUseCase
 
 class GetProductUseCase(private val myStoreRepository: MyStoreRepository): BaseUseCase<Nothing, List<ProductEntity>>(){
     override suspend fun doWork(): List<ProductEntity> {
-        //val result = productRepository.getProduct()
-        return myStoreRepository.getProduct()
+        val result = myStoreRepository.getProduct()
+        val list: MutableList<ProductEntity> = mutableListOf()
+        result.forEach {
+            list.add(it)
+        }
+        return list
     }
-
 }

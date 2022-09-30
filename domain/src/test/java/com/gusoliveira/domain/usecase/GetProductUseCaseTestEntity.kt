@@ -20,11 +20,12 @@ class GetProductUseCaseTestEntity {
     fun `checks if the return is a object`() = runBlocking {
         //arrange
         coEvery { repository.getProduct()} returns productEntityData
-        val getProductObjectUseCase = GetProductUseCase(repository)
+        val getProductUseCase = GetProductUseCase(repository)
 
         //act
-        val result = getProductObjectUseCase.execute()
+        val result = getProductUseCase.execute()
 
+        //assert
         //TODO: nao é possível encontrar o .data, corrigir
         assertThat(result.success)
     }
