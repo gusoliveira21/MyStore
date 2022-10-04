@@ -8,24 +8,29 @@ ext {
     rxKotlinVersion = '2.2.0'
     rxAndroidVersion = '2.1.1'
 
-    // Coroutines
+    //Coroutines
     coroutineVersion = '1.4.3'
 
     //Koin
-    koinVersion = '1.0.2'
+    koinVersion = "3.2.0"
 
     coreVersion = "1.7.0"
     appCompactVersion = "1.5.1"
     androidMaterialVersion = "1.6.1"
 
-    // retrofit
+    //Retrofit
     retrofit2 = "2.9.0"
 
+    constraintlayout = "2.1.4"
+    lifecycle = "2.5.1"
 
     dependencies = [
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
             rxJava                : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-            koin                  : "org.koin:koin-android:$koinVersion",
+
+            koinCore              : "io.insert-koin:koin-core:$koinVersion",
+            koinAndroid           : "io.insert-koin:koin-android:$koinVersion",
+
             rxKotlin              : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
             rxAndroid             : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
             coroutineCore         : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
@@ -34,7 +39,10 @@ ext {
             appCompact            : "androidx.appcompat:appcompat:$appCompactVersion",
             androidMaterial       : "com.google.android.material:material:$androidMaterialVersion",
             retrofit2Retrofit     : "com.squareup.retrofit2:retrofit:$retrofit2",
-            retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$retrofit2"
+            retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$retrofit2",
+            constraintlayout      : "androidx.constraintlayout:constraintlayout:$constraintlayout",
+            lifecycleLivedataKtx  : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle",
+            lifecycleViewmodelKtx : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
     ]
 
     junitVersion = "4.13.2"
@@ -45,19 +53,17 @@ ext {
     espressoCoreVersion = "3.4.0"
 
     testDependencies = [
-            testCoroutine          : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion",
-            testJunit              : "junit:junit:$junitVersion",
-            testMockk              : "io.mockk:mockk:$mockkVersion",
-            testMockitoCore        : "org.mockito:mockito-core:$mockkCoreVersion",
-            testAssertkJvm         : "com.willowtreeapps.assertk:assertk-jvm:$assertkVersion",
-            androidTestCoroutine   : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion",
-            androidTestExtJunit    : "androidx.test.ext:junit:$testExtJunitVersion",
-            androidTestEspressoCore: "androidx.test.espresso:espresso-core:$espressoCoreVersion"
-
+            testCoroutine            : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion",
+            testJunit                : "junit:junit:$junitVersion",
+            testMockk                : "io.mockk:mockk:$mockkVersion",
+            testMockitoCore          : "org.mockito:mockito-core:$mockkCoreVersion",
+            testAssertkJvm           : "com.willowtreeapps.assertk:assertk-jvm:$assertkVersion",
+            androidTestCoroutine     : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion",
+            androidTestExtJunit      : "androidx.test.ext:junit:$testExtJunitVersion",
+            androidTestEspressoCore  : "androidx.test.espresso:espresso-core:$espressoCoreVersion",
+            androidTestKoinTest      : "io.insert-koin:koin-test:$koinVersion",
+            androidTestKoinTestJunit4: "io.insert-koin:koin-test-junit4:$koinVersion"
     ]
 }
-/*
-    androidTestImplementation "androidx.test.ext:junit:$testExtJunitVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"*/
 
 

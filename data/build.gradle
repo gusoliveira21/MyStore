@@ -41,7 +41,7 @@ dependencies {
     implementation dependencies.retrofit2ConverterGson
 
     def testDependencies = rootProject.ext.testDependencies
-    implementation testDependencies.testJunit
-    implementation testDependencies.androidTestExtJunit
+    //implementation testDependencies.testJunit
+    //implementation testDependencies.androidTestExtJunit
     implementation testDependencies.androidTestEspressoCore
 }

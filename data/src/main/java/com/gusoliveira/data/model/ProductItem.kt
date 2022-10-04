@@ -7,7 +7,7 @@ data class ProductItem(
     val description: String,
     val id: Int,
     val image: String,
-    val price: DecimalFormat, //se der erro, trocar para Double
+    val price: Double, //se der erro, trocar para DecimalFormat
     val rating: Rating,
     val title: String
 )
