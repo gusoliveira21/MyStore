@@ -1,4 +1,10 @@
 ext {
+    coreVersion = "1.7.0"
+    appCompactVersion = "1.5.1"
+    androidMaterialVersion = "1.6.1"
+
+    constraintlayout = "2.1.4"
+    lifecycle = "2.5.1"
 
     kotlinVersion = '1.3.21'
     buildTools = '3.4.0-beta04'
@@ -14,23 +20,18 @@ ext {
     //Koin
     koinVersion = "3.2.0"
 
-    coreVersion = "1.7.0"
-    appCompactVersion = "1.5.1"
-    androidMaterialVersion = "1.6.1"
-
     //Retrofit
     retrofit2 = "2.9.0"
 
-    constraintlayout = "2.1.4"
-    lifecycle = "2.5.1"
+    //navigation
+    navFragVersion = "2.5.2"
+    navUiVersion = "2.5.2"
 
     dependencies = [
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
             rxJava                : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-
             koinCore              : "io.insert-koin:koin-core:$koinVersion",
             koinAndroid           : "io.insert-koin:koin-android:$koinVersion",
-
             rxKotlin              : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
             rxAndroid             : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
             coroutineCore         : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
@@ -42,7 +43,9 @@ ext {
             retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$retrofit2",
             constraintlayout      : "androidx.constraintlayout:constraintlayout:$constraintlayout",
             lifecycleLivedataKtx  : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle",
-            lifecycleViewmodelKtx : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+            lifecycleViewmodelKtx : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle",
+            navFrag               : "androidx.navigation:navigation-fragment-ktx:$navFragVersion",
+            navUi                 : "androidx.navigation:navigation-ui-ktx:$navUiVersion"
     ]
 
     junitVersion = "4.13.2"
@@ -65,5 +68,3 @@ ext {
             androidTestKoinTestJunit4: "io.insert-koin:koin-test-junit4:$koinVersion"
     ]
 }
-
-
