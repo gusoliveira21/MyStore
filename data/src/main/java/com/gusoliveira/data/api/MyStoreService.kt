@@ -7,6 +7,7 @@ interface MyStoreService {
     companion object{
         const val RESOURCE_URL = "products"
     }
+    // TODO remover o companion object e utilizar o valor direto na anotação
 @GET(RESOURCE_URL)
 suspend fun getAllProductsList(): Product
 }

@@ -8,6 +8,7 @@ import com.gusoliveira.domain.entities.Rating
 import com.gusoliveira.domain.repository.MyStoreRepository
 import org.junit.runner.manipulation.Ordering.Context
 
+// TODO utilizar o padrão mapper aqui https://www.baeldung.com/kotlin/data-objects
 class MyStoreRepositoryImpl(
     private val myStoreService: MyStoreService) :
     MyStoreRepository {

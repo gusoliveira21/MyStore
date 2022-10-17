@@ -38,13 +38,14 @@ dependencies {
     implementation dependencies.coroutineCore
     implementation dependencies.coroutineAndroid
 
+    /*Testing libraries*/
     def testDependencies = rootProject.ext.testDependencies
-    implementation testDependencies.testCoroutine
-    implementation testDependencies.testJunit
-    implementation testDependencies.testMockk
-    implementation testDependencies.testMockitoCore
-    implementation testDependencies.testAssertkJvm
-    implementation testDependencies.androidTestCoroutine
+    testImplementation testDependencies.testCoroutine
+    testImplementation testDependencies.testJunit
+    testImplementation testDependencies.testMockk
+//    testImplementation testDependencies.testMockitoCore
+    testImplementation testDependencies.testAssertkJvm
+//    testImplementation testDependencies.androidTestCoroutine
 }
 //sourceCompatibility = JavaVersion.VERSION_1_8
 //targetCompatibility = JavaVersion.VERSION_1_8
