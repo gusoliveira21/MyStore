@@ -16,6 +16,7 @@ class GetProductUseCaseTestEntity {
     @get:Rule
     var coroutineTesteRule = MainCoroutineRule()
     private val repository = mockk<MyStoreRepository>(relaxed = true)
+    //Ao executar ele diz que nenhum teste foi encontrado
     @Test
     fun `checks if the return is a object`() = runBlocking {
         //arrange

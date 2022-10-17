@@ -13,6 +13,7 @@ abstract class BaseUseCase <in Params, out R> {
             try {
                 val result = withContext(Dispatchers.IO){doWork()}
                 DataResult.Success(result)
+
             }catch (e:Throwable){
                 DataResult.Failure
             }

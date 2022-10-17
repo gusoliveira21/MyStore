@@ -1,3 +1,3 @@
 package com.gusoliveira.data.model
 
-class Product(val `data` :List<ProductItem>)
+data class Product(val `data` :List<ProductItem>)

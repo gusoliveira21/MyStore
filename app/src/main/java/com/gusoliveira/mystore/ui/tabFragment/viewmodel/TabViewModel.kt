@@ -1,20 +1,22 @@
 package com.gusoliveira.mystore.ui.tabFragment.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.gusoliveira.domain.entities.ProductEntity
 
-class TabViewModel: ViewModel() {
-    var currentTabContent: String = "Current on Tab One!"
-    var currentTab: String = "Tab One!"
-    private val currentTabObserver: MutableLiveData<String> = MutableLiveData()
-    // lógica é programada no view model a view geralmente so é atualizada
-    // separando responsabilidades CoC (cerparation of concern)
-    fun getCurrent(tab: String): String {
-        if (currentTab != tab) {
-            currentTabContent = "Toque anterior: $currentTab\nÚltimo toque: $tab"
-            currentTab = tab
-        }
-        return currentTabContent
-    }
-    fun getContentObserver(): MutableLiveData<String> = currentTabObserver
+abstract class TabViewModel: ViewModel() {
+
+    abstract val produtList: LiveData<MutableList<ProductEntity>>
+
+    abstract val error: LiveData<String>
+
+    abstract fun getProdutList(wordToSearch:String = "")
+
+    abstract fun onItemClicked(link: String)
+
+    abstract fun getCurrent(tab: String): String
+
+    abstract fun getContentObserver(): MutableLiveData<String>
+
 }
