@@ -45,7 +45,8 @@ ext {
             lifecycleLivedataKtx  : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle",
             lifecycleViewmodelKtx : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle",
             navFrag               : "androidx.navigation:navigation-fragment-ktx:$navFragVersion",
-            navUi                 : "androidx.navigation:navigation-ui-ktx:$navUiVersion"
+            navUi                 : "androidx.navigation:navigation-ui-ktx:$navUiVersion",
+            scalars               : 'com.squareup.retrofit2:converter-scalars:2.9.0',
     ]
 
     junitVersion = "4.13.2"
