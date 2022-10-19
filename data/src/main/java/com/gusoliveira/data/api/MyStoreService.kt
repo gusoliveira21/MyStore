@@ -1,6 +1,6 @@
 package com.gusoliveira.data.api
 
-import com.gusoliveira.data.model.Product
+import com.gusoliveira.data.model2.ProductItem
 import retrofit2.http.GET
 
 interface MyStoreService {
@@ -9,5 +9,5 @@ interface MyStoreService {
     }
     // TODO remover o companion object e utilizar o valor direto na anotação
 @GET(RESOURCE_URL)
-suspend fun getAllProductsList(): Product
+suspend fun getAllProductsList(): ProductItem
 }

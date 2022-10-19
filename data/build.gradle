@@ -39,6 +39,7 @@ dependencies {
     implementation dependencies.androidMaterial
     implementation dependencies.retrofit2Retrofit
     implementation dependencies.retrofit2ConverterGson
+    implementation dependencies.scalars
 
     def testDependencies = rootProject.ext.testDependencies
     //implementation testDependencies.testJunit

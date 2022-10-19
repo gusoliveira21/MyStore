@@ -6,7 +6,7 @@ sealed class DataResult<out T> {
 
     val isSuccess get() = this is Success<T>
     val isFailure get() = this is Failure
-    val success get() = (this is Success<T>)
+    val success get() = (this as Success<T>)
 
     fun handleResult(success: (T) -> Unit, error: () -> Unit) {
         when (this) {

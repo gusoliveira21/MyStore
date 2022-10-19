@@ -49,7 +49,6 @@ class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabVi
     private fun getProdutListSuccess(list: List<ProductEntity>) {
         produtList.value = list.map { it }.toMutableList()
         Log.e("test","${produtList.value}")
-        Log.e("test","{${list[1]}}")
     }
 
     private fun getProdutListFailure() {
