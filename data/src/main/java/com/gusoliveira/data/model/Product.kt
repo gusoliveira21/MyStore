@@ -1,3 +1,4 @@
 package com.gusoliveira.data.model
 
-class Product(val `data` :List<ProductItem>)
+// TODO não utilizar o nome data como nome do atributo
+data class Product(val `data` :List<ProductItem>)

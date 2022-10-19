@@ -4,6 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInitializer {
+    // TODO Remover o uso do companion object
     companion object {
         private const val BASE_URL = "https://fakestoreapi.com/"
     }

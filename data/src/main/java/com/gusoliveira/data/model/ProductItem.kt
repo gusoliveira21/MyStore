@@ -1,7 +1,6 @@
 package com.gusoliveira.data.model
 
-import java.text.DecimalFormat
-
+// TODO Utilizar a anotação do parse
 data class ProductItem(
     val category: String,
     val description: String,

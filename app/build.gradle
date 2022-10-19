@@ -38,6 +38,8 @@ android {
 dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 
     def dependencies = rootProject.ext.dependencies
     implementation dependencies.koinCore
@@ -48,9 +50,11 @@ dependencies {
     implementation dependencies.constraintlayout
     implementation dependencies.lifecycleLivedataKtx
     implementation dependencies.lifecycleViewmodelKtx
+    implementation dependencies.navFrag
+    implementation dependencies.navUi
 
     def testDependencies = rootProject.ext.testDependencies
+    implementation testDependencies.androidTestEspressoCore
     //implementation testDependencies.testJunit
     //implementation testDependencies.androidTestExtJunit
-    implementation testDependencies.androidTestEspressoCore
 }
