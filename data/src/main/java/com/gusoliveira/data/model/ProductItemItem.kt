@@ -1,4 +1,4 @@
-package com.gusoliveira.data.model2
+package com.gusoliveira.data.model
 
 
 data class ProductItemItem(

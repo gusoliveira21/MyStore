@@ -32,7 +32,7 @@ class GetProductUseCaseTestEntity {
 
         //assert
         //TODO: nao é possível encontrar o .data, corrigir
-//        assertThat(result.success).isEqualTo()
+        //assertThat(result.success).isEqualTo()
         assertThat(true).isTrue()
     }
 }
