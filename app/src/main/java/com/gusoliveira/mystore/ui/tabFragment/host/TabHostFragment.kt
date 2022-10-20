@@ -21,8 +21,10 @@ class TabHostFragment : Fragment(R.layout.fragment_tab_host) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentTabHostBinding.bind(view)
 
-        val tabLayout = binding.tabLayout
+        val tabLayout = binding.tabLayoutTitle
+
         val titles = arrayOf(R.string.tabOne,R.string.tabTwo)
+
         val pager = binding.pager
         pager.adapter = TabPagerAdapter(titles.size, this)
         TabLayoutMediator(tabLayout, pager){tab, position ->

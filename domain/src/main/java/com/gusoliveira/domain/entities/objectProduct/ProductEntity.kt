@@ -1,4 +1,4 @@
-package com.gusoliveira.domain.entities
+package com.gusoliveira.domain.entities.objectProduct
 
 data class ProductEntity(
     var id:Int,
@@ -7,5 +7,5 @@ data class ProductEntity(
     var description: String,
     var category:String,
     var image:String,
-    var rating:Rating
+    var rating: Rating
 )

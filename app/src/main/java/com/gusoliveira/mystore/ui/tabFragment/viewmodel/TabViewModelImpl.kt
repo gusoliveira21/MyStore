@@ -1,10 +1,10 @@
 package com.gusoliveira.mystore.ui.tabFragment.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.gusoliveira.domain.entities.ProductEntity
+import com.gusoliveira.domain.entities.objectCategory.CategoryEntity
+import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.usecase.GetProductUseCase
 import kotlinx.coroutines.launch
 
@@ -25,7 +25,7 @@ class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabVi
 
     override fun getContentObserver(): MutableLiveData<String> = currentTabObserver
 
-
+/**----------------------------------------------------------------------------------------------*/
 
 
     init {
@@ -33,6 +33,7 @@ class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabVi
     }
 
     override val produtList = MutableLiveData<MutableList<ProductEntity>>()
+    override val categoryList = MutableLiveData<MutableList<ProductEntity>>()
     override val error = MutableLiveData<String>()
 
     override fun getProdutList(wordToSearch: String) {
@@ -46,8 +47,9 @@ class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabVi
         TODO("Not yet implemented")
     }
 
-    private fun getProdutListSuccess(list: List<ProductEntity>) {
-        produtList.value = list.map { it }.toMutableList()
+    private fun getProdutListSuccess(list: List<List<Any>>) {
+        produtList.value = list[0].map { it }.toMutableList()
+        categoryList.value = list[1].map { it }.toMutableList()
         Log.e("test","${produtList.value}")
     }
 

@@ -1,7 +1,7 @@
 package com.gusoliveira.domain
 
-import com.gusoliveira.domain.entities.ProductEntity
-import com.gusoliveira.domain.entities.Rating
+import com.gusoliveira.domain.entities.objectProduct.ProductEntity
+import com.gusoliveira.domain.entities.objectProduct.Rating
 
 val productEntityData = listOf(
     ProductEntity(

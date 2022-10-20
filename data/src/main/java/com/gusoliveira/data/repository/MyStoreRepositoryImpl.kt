@@ -1,8 +1,8 @@
 package com.gusoliveira.data.repository
 
 import com.gusoliveira.data.api.MyStoreService
-import com.gusoliveira.domain.entities.Rating
-import com.gusoliveira.domain.entities.ProductEntity
+import com.gusoliveira.domain.entities.objectProduct.Rating
+import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.repository.MyStoreRepository
 
 // TODO utilizar o padrão mapper aqui https://www.baeldung.com/kotlin/data-objects
