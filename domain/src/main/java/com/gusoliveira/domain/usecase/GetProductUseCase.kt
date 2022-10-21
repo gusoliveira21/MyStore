@@ -1,5 +1,6 @@
 package com.gusoliveira.domain.usecase
 
+import android.util.Log
 import com.gusoliveira.domain.entities.objectCategory.CategoryEntity
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.repository.MyStoreRepository
@@ -13,8 +14,8 @@ class GetProductUseCase(private val myStoreRepository: MyStoreRepository): BaseU
     }
     private suspend fun getAllProducts() = myStoreRepository.getProduct()
 
-    private fun getAllCategory(allProducts: List<ProductEntity>):List<CategoryEntity> =
-        allProducts.map { CategoryEntity(it.category)}.toMutableList()
+    private fun getAllCategory(allProducts: List<ProductEntity>):List<String> =
+        allProducts.map {it.category}.toMutableList()
 
 
 }
