@@ -27,16 +27,15 @@ class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabVi
 
 /**----------------------------------------------------------------------------------------------*/
 
-
     init {
-        getProdutList("")
+        getProdutList()
     }
 
-    override val produtList = MutableLiveData<MutableList<ProductEntity>>()
-    override val categoryList = MutableLiveData<MutableList<ProductEntity>>()
+    override val produtList = MutableLiveData<MutableList<Any>>()
+    override val categoryList = MutableLiveData<MutableList<Any>>()
     override val error = MutableLiveData<String>()
 
-    override fun getProdutList(wordToSearch: String) {
+    override fun getProdutList() {
             viewModelScope.launch {
                 val result = getProductUseCase.execute()
                 result.handleResult(::getProdutListSuccess, ::getProdutListFailure)
@@ -50,7 +49,6 @@ class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabVi
     private fun getProdutListSuccess(list: List<List<Any>>) {
         produtList.value = list[0].map { it }.toMutableList()
         categoryList.value = list[1].map { it }.toMutableList()
-        Log.e("test","${produtList.value}")
     }
 
     private fun getProdutListFailure() {
