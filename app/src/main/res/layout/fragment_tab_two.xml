@@ -8,7 +8,7 @@
     tools:context=".ui.tabFragment.tab.TabTwoFragment">
 
     <TextView
-        android:id="@+id/content_title"
+        android:id="@+id/content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
