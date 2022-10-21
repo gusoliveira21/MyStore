@@ -1,10 +1,7 @@
 package com.gusoliveira.mystore.ui.tabFragment.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.gusoliveira.domain.entities.objectCategory.CategoryEntity
-import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.usecase.GetProductUseCase
 import kotlinx.coroutines.launch
 
@@ -25,7 +22,7 @@ class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabVi
 
     override fun getContentObserver(): MutableLiveData<String> = currentTabObserver
 
-/**----------------------------------------------------------------------------------------------*/
+    /**----------------------------------------------------------------------------------------------*/
 
     init {
         getProdutList()
@@ -36,24 +33,24 @@ class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabVi
     override val error = MutableLiveData<String>()
 
     override fun getProdutList() {
-            viewModelScope.launch {
-                val result = getProductUseCase.execute()
-                result.handleResult(::getProdutListSuccess, ::getProdutListFailure)
-            }
+        viewModelScope.launch {
+            val result = getProductUseCase.execute()
+            result.handleResult(::getProdutListSuccess, ::getProdutListFailure)
+        }
     }
 
     override fun onItemClicked(link: String) {
         TODO("Not yet implemented")
     }
 
-    private fun getProdutListSuccess(list: List<List<Any>>) {
+    //TODO: Deveria fazer uma função pra cada retorno de lista?
+    private fun getProdutListSuccess(list: List<List<Any>>) { //Pega lista de objetos e lista de categorias
         produtList.value = list[0].map { it }.toMutableList()
         categoryList.value = list[1].map { it }.toMutableList()
     }
 
     private fun getProdutListFailure() {
         error.value = "Não foi possível obter a lista de gatos!!"
-        Log.e("test","${error.value}")
     }
 
 }

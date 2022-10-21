@@ -16,7 +16,7 @@ class TabTwoFragment(private val viewModel: TabViewModel) : Fragment(layout.frag
         binding = FragmentTabTwoBinding.bind(view)
 
         val tabContentObserver = Observer<String> { newContent ->
-            binding.contentTitle.text = viewModel.getCurrent(newContent)
+            binding.content.text = viewModel.getCurrent(newContent) /**Conteudo da tela*/
         }
         viewModel.getContentObserver().observe(viewLifecycleOwner, tabContentObserver)
         binding.btnTabTwo.setOnClickListener {

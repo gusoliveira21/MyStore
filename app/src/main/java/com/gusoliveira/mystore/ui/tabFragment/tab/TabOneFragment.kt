@@ -17,7 +17,7 @@ class TabOneFragment(private val viewModel: TabViewModel) : Fragment(R.layout.fr
 
         // Criar um observador que atualiza a UI
         val tabContentObserver = Observer<String>{ newContent ->
-            binding.contentTitle.text = viewModel.getCurrent(newContent)
+            binding.content.text = viewModel.getCurrent(newContent) /**Conteudo da tela*/
         }
 
         viewModel.getContentObserver().observe(viewLifecycleOwner, tabContentObserver)
