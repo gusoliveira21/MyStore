@@ -1,3 +1,5 @@
 package com.gusoliveira.domain.entities.objectCategory
 
-class CategoryEntity(var category:String)
+data class CategoryEntity(
+    var category: String
+)
