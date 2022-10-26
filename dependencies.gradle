@@ -27,26 +27,36 @@ ext {
     navFragVersion = "2.5.2"
     navUiVersion = "2.5.2"
 
+    //Glide
+    glideVersion = "4.12.0"
+    glideTransforVersion = "4.3.0"
+
+    moshiVersion = "2.4.0"
+    moshiKotlinVersion = "1.12.0"
+
     dependencies = [
-            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
-            rxJava                : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
-            koinCore              : "io.insert-koin:koin-core:$koinVersion",
-            koinAndroid           : "io.insert-koin:koin-android:$koinVersion",
-            rxKotlin              : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
-            rxAndroid             : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
-            coroutineCore         : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
-            coroutineAndroid      : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",
-            core                  : "androidx.core:core-ktx:$coreVersion",
-            appCompact            : "androidx.appcompat:appcompat:$appCompactVersion",
-            androidMaterial       : "com.google.android.material:material:$androidMaterialVersion",
-            retrofit2Retrofit     : "com.squareup.retrofit2:retrofit:$retrofit2",
-            retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$retrofit2",
-            constraintlayout      : "androidx.constraintlayout:constraintlayout:$constraintlayout",
-            lifecycleLivedataKtx  : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle",
-            lifecycleViewmodelKtx : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle",
-            navFrag               : "androidx.navigation:navigation-fragment-ktx:$navFragVersion",
-            navUi                 : "androidx.navigation:navigation-ui-ktx:$navUiVersion",
-            scalars               : 'com.squareup.retrofit2:converter-scalars:2.9.0',
+            kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            rxJava                 : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            koinCore               : "io.insert-koin:koin-core:$koinVersion",
+            koinAndroid            : "io.insert-koin:koin-android:$koinVersion",
+            rxKotlin               : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            rxAndroid              : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            coroutineCore          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
+            coroutineAndroid       : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",
+            core                   : "androidx.core:core-ktx:$coreVersion",
+            appCompact             : "androidx.appcompat:appcompat:$appCompactVersion",
+            androidMaterial        : "com.google.android.material:material:$androidMaterialVersion",
+            retrofit2Retrofit      : "com.squareup.retrofit2:retrofit:$retrofit2",
+            moshiKotlin            : "com.squareup.moshi:moshi-kotlin:$moshiKotlinVersion",
+            retrofit2ConverterMoshi: "com.squareup.retrofit2:converter-moshi:$moshiVersion",
+            //retrofit2ConverterGson : "com.squareup.retrofit2:converter-gson:$retrofit2",
+            constraintlayout       : "androidx.constraintlayout:constraintlayout:$constraintlayout",
+            lifecycleLivedataKtx   : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle",
+            lifecycleViewmodelKtx  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle",
+            navFrag                : "androidx.navigation:navigation-fragment-ktx:$navFragVersion",
+            navUi                  : "androidx.navigation:navigation-ui-ktx:$navUiVersion",
+            glide                  : "com.github.bumptech.glide:glide:$glideVersion",
+            glideTransfor          : "jp.wasabeef:glide-transformations:$glideTransforVersion",
     ]
 
     junitVersion = "4.13.2"

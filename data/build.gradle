@@ -38,8 +38,9 @@ dependencies {
     implementation dependencies.appCompact
     implementation dependencies.androidMaterial
     implementation dependencies.retrofit2Retrofit
-    implementation dependencies.retrofit2ConverterGson
-    implementation dependencies.scalars
+    //implementation dependencies.retrofit2ConverterGson
+    implementation dependencies.retrofit2ConverterMoshi
+    implementation dependencies.moshiKotlin
 
     def testDependencies = rootProject.ext.testDependencies
     //implementation testDependencies.testJunit
