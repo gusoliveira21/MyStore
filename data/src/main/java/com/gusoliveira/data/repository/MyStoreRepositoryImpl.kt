@@ -1,7 +1,8 @@
 package com.gusoliveira.data.repository
 
+import android.util.Log
 import com.gusoliveira.data.api.MyStoreService
-import com.gusoliveira.domain.entities.objectProduct.Rating
+import com.gusoliveira.data.util.toProductEntity
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.repository.MyStoreRepository
 
@@ -14,22 +15,10 @@ class MyStoreRepositoryImpl(
          * logo, o modelo de entrada também será o modelo de saída*/
         val listProducts = myStoreService.getAllProductsList()
         val listProductEntityDomain: MutableList<ProductEntity> = mutableListOf()
-        listProducts.map { data ->
-            listProductEntityDomain.add(
-                ProductEntity(
-                    id = data.id,
-                    title = data.title,
-                    price = data.price,
-                    description = data.description,
-                    category = data.category,
-                    image = data.image,
-                    Rating(
-                        rate = data.rating.rate,
-                        count = data.rating.count
-                    )
-                )
-            )
-        }
+        listProducts.map { listProductEntityDomain.add(it.toProductEntity()) }
         return listProductEntityDomain
     }
+
+
+
 }
