@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
@@ -13,8 +14,8 @@
         android:layout_margin="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageProdut"
@@ -34,7 +35,7 @@
                 android:paddingStart="8dp"
                 android:paddingEnd="4dp"
                 android:text="Gustavo \nOliveira"
-                android:textSize="18dp"
+                android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@+id/valueProdut"
                 app:layout_constraintEnd_toStartOf="@+id/valueProdut"
                 app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +48,7 @@
                 android:paddingStart="4dp"
                 android:paddingEnd="8dp"
                 android:text="R$ 15,00"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageProdut" />
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,6 @@ import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.databinding.ItemProdutBinding
 
 class AdapterTab : RecyclerView.Adapter<ViewHolderItemProdut>() {
-    //TODO Fazer Any virar um ProductEntity
-
     var listObjectProdut: MutableList<ProductEntity> = mutableListOf()
     override fun getItemCount() = listObjectProdut.size
 
@@ -22,8 +20,6 @@ class AdapterTab : RecyclerView.Adapter<ViewHolderItemProdut>() {
 
         holder.setupCardProduct(listObjectProdut[position])
         Log.e("test","Adapter: ${listObjectProdut[position].category}")
-
-        //Log.e("test","${}")
     }
 
 }
