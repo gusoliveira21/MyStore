@@ -2,9 +2,9 @@ package com.gusoliveira.domain.usecase
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo
-import assertk.assertions.isTrue
 import br.com.domain.MainCoroutineRule
-import com.gusoliveira.domain.productEntityData
+import com.gusoliveira.domain.productData
+import com.gusoliveira.domain.productExpected
 import com.gusoliveira.domain.repository.MyStoreRepository
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -24,15 +24,14 @@ class GetProductUseCaseTestEntity {
     @Test
     fun `checks if the return is a object`() = runBlocking {
         //arrange
-        coEvery { repository.getProduct() } returns productEntityData
+        coEvery { repository.getProduct() } returns productData
         val getProductUseCase = GetProductUseCase(repository)
 
         //act
         val result = getProductUseCase.execute()
+        //val result = GetProductUseCase(repository)//getProductUseCase.execute()
 
-        //assert
-        //TODO: nao é possível encontrar o .data, corrigir
-        //assertThat(result.success).isEqualTo()
-        assertThat(true).isTrue()
+        //assert TODO corrigir erro
+        assertThat(result.success.data.first()).isEqualTo(productExpected)
     }
 }
