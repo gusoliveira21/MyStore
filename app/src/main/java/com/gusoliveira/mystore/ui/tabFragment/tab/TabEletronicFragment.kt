@@ -27,29 +27,20 @@ class TabEletronicFragment(private val viewModel: TabViewModel) :
 
     private fun observer() {
         viewModel.produtList.observe(viewLifecycleOwner, Observer { it ->
-            adapter(it)
-
+            var product = it as MutableList<ProductEntity>
+            adapter(product)
         })
     }
 
-    private fun adapter(listObjectProdut: MutableList<Any>) {
-        listObjectProdut
-        //adapterTab.listObjectProdut = listObjectProdut
+    private fun adapter(listObjectProdut: MutableList<ProductEntity>) {
+        adapterTab.listObjectProdut = listObjectProdut
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapterTab
     }
 
-    fun ProductEntity.toProductEntity() = ProductEntity(
-        id = id,
-        title = title,
-        price = price,
-        description = description,
-        category = category,
-        image = image,
-        rating = rating
-    )
 
-    /*private fun adapter(catUriList: MutableList<String>) {
+    /** Exemplo:
+        private fun adapter(catUriList: MutableList<String>) {
         adapter.catUriList = catUriList
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 4)
         binding.recyclerView.adapter = adapter
