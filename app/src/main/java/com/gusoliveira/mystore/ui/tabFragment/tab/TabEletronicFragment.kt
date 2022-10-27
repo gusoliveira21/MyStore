@@ -24,7 +24,7 @@ class TabEletronicFragment(private val viewModel: TabViewModel) : Fragment(R.lay
     private fun observer() {
         viewModel.produtList.observe(viewLifecycleOwner, Observer { it ->
             var product = it as MutableList<ProductEntity>
-            viewModel.getProductByCategry(product, "electronics")
+            viewModel.getProductByCategory(product, "electronics")
         })
         viewModel.electronicsList.observe(viewLifecycleOwner, Observer (::adapter))
     }
