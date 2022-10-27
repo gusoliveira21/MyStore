@@ -22,6 +22,7 @@
         android:elevation="18dp"
         android:focusable="true"
         app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="20:10"
         app:layout_constraintEnd_toEndOf="parent"
