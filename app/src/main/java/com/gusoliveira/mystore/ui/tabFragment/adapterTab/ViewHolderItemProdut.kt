@@ -6,12 +6,11 @@ import com.bumptech.glide.request.RequestOptions
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.databinding.ItemProdutBinding
 import jp.wasabeef.glide.transformations.CropSquareTransformation
-import org.koin.core.component.getScopeName
 
 class ViewHolderItemProdut(item: ItemProdutBinding) : RecyclerView.ViewHolder(item.root) {
-    var viewImagem = item.imageProdut
-    var price = item.valueProdut
-    var name = item.nameProdut
+    var viewImagem = item.idImageProduct
+    var price = item.idPriceProduct
+    var name = item.idNameProduct
 
     fun setupCardProduct(product: ProductEntity) {
         setImageProduct(product.image)
@@ -20,7 +19,7 @@ class ViewHolderItemProdut(item: ItemProdutBinding) : RecyclerView.ViewHolder(it
     }
 
     private fun setPriceProduct(priceProduct : Double) {
-        price.text = priceProduct.toString()
+        price.text = "R$ $priceProduct"
     }
 
     private fun setNameProduct(nameProduct : String) {
