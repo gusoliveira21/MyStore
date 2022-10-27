@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EFEDED"
     tools:context=".ui.tabFragment.tab.TabEletronicFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -18,7 +19,7 @@
         tools:itemCount="25"
         tools:listitem="@layout/item_produt"
         tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:spanCount="2">
+        tools:spanCount="1">
 
     </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
