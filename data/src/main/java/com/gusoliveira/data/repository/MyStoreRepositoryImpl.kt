@@ -18,6 +18,7 @@ class MyStoreRepositoryImpl(
         return listProductEntityDomain
     }
 
-
-
+    override suspend fun getCategories(): List<String> {
+       return myStoreService.getCategoriesList()
+    }
 }
