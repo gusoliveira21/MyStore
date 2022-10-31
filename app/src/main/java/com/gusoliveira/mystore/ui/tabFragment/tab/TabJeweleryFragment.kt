@@ -1,14 +1,12 @@
 package com.gusoliveira.mystore.ui.tabFragment.tab
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.R
-import com.gusoliveira.mystore.databinding.FragmentTabEletronicsBinding
 import com.gusoliveira.mystore.databinding.FragmentTabJeweleryBinding
 import com.gusoliveira.mystore.ui.tabFragment.adapterTab.AdapterTab
 import com.gusoliveira.mystore.ui.tabFragment.viewmodel.TabViewModel
@@ -28,7 +26,7 @@ class TabJeweleryFragment(private val viewModel: TabViewModel) : Fragment(R.layo
             var product = it as MutableList<ProductEntity>
             viewModel.getProductByCategory(product, "jewelery")
         })
-        viewModel.JeweleryList.observe(viewLifecycleOwner, Observer (::adapter))
+        viewModel.jeweleryList.observe(viewLifecycleOwner, Observer (::adapter))
     }
 
     private fun adapter(listObjectProdut: MutableList<ProductEntity>) {

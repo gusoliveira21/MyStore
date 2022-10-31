@@ -19,7 +19,6 @@ class TabHostFragment : Fragment(R.layout.fragment_tab_host) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentTabHostBinding.bind(view)
-
         observable()
     }
 

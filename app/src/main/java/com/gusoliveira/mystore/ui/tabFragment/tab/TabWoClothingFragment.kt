@@ -1,7 +1,6 @@
 package com.gusoliveira.mystore.ui.tabFragment.tab
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -27,7 +26,7 @@ class TabWoClothingFragment(private val viewModel: TabViewModel) : Fragment(layo
             var product = it as MutableList<ProductEntity>
             viewModel.getProductByCategory(product, "women's clothing")
         })
-        viewModel.WClothingList.observe(viewLifecycleOwner, Observer (::adapter))
+        viewModel.wClothingList.observe(viewLifecycleOwner, Observer (::adapter))
     }
 
     private fun adapter(listObjectProdut: MutableList<ProductEntity>) {

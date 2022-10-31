@@ -1,6 +1,5 @@
 package com.gusoliveira.data.repository
 
-import android.util.Log
 import com.gusoliveira.data.api.MyStoreService
 import com.gusoliveira.data.util.toProductEntity
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity

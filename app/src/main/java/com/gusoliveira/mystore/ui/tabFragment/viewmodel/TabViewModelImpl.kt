@@ -1,15 +1,12 @@
 package com.gusoliveira.mystore.ui.tabFragment.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.usecase.GetProductUseCase
 import kotlinx.coroutines.launch
 
-class TabViewModelImpl(
-    private val getProductUseCase: GetProductUseCase
-) : TabViewModel() {
+class TabViewModelImpl(private val getProductUseCase: GetProductUseCase) : TabViewModel() {
     init {
         getProdutList()
     }
@@ -17,9 +14,9 @@ class TabViewModelImpl(
     override val produtList = MutableLiveData<MutableList<Any>>()
     override var electronicsList = MutableLiveData<MutableList<ProductEntity>>()
 
-    override val WClothingList = MutableLiveData<MutableList<ProductEntity>>()
-    override val MClothingList = MutableLiveData<MutableList<ProductEntity>>()
-    override val JeweleryList = MutableLiveData<MutableList<ProductEntity>>()
+    override val wClothingList = MutableLiveData<MutableList<ProductEntity>>()
+    override val mClothingList = MutableLiveData<MutableList<ProductEntity>>()
+    override val jeweleryList = MutableLiveData<MutableList<ProductEntity>>()
 
     override val categoryList = MutableLiveData<MutableList<Any>>()
     override val error = MutableLiveData<String>()
@@ -39,9 +36,9 @@ class TabViewModelImpl(
     override fun getProductByCategory(allProducts: MutableList<ProductEntity>, category:String) {
         when(category){
             "electronics" -> electronicsList.value = selectCategory(allProducts, category)
-            "women's clothing" -> WClothingList.value = selectCategory(allProducts, category)
-            "men's clothing" -> MClothingList.value = selectCategory(allProducts, category)
-            "jewelery" -> JeweleryList.value = selectCategory(allProducts, category)
+            "women's clothing" -> wClothingList.value = selectCategory(allProducts, category)
+            "men's clothing" -> mClothingList.value = selectCategory(allProducts, category)
+            "jewelery" -> jeweleryList.value = selectCategory(allProducts, category)
         }
     }
 
