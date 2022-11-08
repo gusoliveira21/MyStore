@@ -15,4 +15,7 @@ interface MyStoreService {
     */
     @GET("products")
     suspend fun getAllProductsList(): List<ItemProduct>
+
+    @GET("products/categories")
+    suspend fun getCategoriesList(): List<String>
 }

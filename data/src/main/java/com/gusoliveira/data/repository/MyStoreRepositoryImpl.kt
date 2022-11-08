@@ -10,14 +10,15 @@ class MyStoreRepositoryImpl(
     private val myStoreService: MyStoreService
 ) : MyStoreRepository {
     override suspend fun getProduct(): List<ProductEntity> {
-        /**Precisa ser deste modo já que a lista será retornada sem nenhuma mudança
-         * logo, o modelo de entrada também será o modelo de saída*/
         val listProducts = myStoreService.getAllProductsList()
         val listProductEntityDomain: MutableList<ProductEntity> = mutableListOf()
         listProducts.map { listProductEntityDomain.add(it.toProductEntity()) }
         return listProductEntityDomain
     }
 
+    override suspend fun getCategories(): List<String> {
+        return myStoreService.getCategoriesList()
+    }
 
 
 }
