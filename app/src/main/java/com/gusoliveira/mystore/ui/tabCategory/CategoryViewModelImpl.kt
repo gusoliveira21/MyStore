@@ -1,6 +1,5 @@
 package com.gusoliveira.mystore.ui.tabCategory
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.gusoliveira.domain.usecase.GetCategoriesUseCase

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.R
 import com.gusoliveira.mystore.databinding.FragmentTabEletronicsBinding
-import com.gusoliveira.mystore.ui.tabFragment.adapterTab.AdapterTab
+import com.gusoliveira.mystore.ui.tabFragment.adapterTabProduct.AdapterTab
 import com.gusoliveira.mystore.ui.tabFragment.viewmodel.TabViewModel
 
 class TabEletronicFragment(private val viewModel: TabViewModel) : Fragment(R.layout.fragment_tab_eletronics) {

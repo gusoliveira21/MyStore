@@ -1,4 +1,4 @@
-package com.gusoliveira.mystore.ui.tabFragment.adapterTab
+package com.gusoliveira.mystore.ui.tabFragment.adapterTabProduct
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide

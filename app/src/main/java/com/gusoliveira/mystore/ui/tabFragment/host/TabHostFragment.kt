@@ -1,14 +1,14 @@
 package com.gusoliveira.mystore.ui.tabFragment.host
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.android.material.tabs.TabLayoutMediator
 import com.gusoliveira.mystore.R
 import com.gusoliveira.mystore.databinding.FragmentTabHostBinding
-import com.gusoliveira.mystore.ui.tabFragment.viewmodel.TabViewModel
 import com.gusoliveira.mystore.ui.tabFragment.adapterHost.TabPagerAdapter
+import com.gusoliveira.mystore.ui.tabFragment.viewmodel.TabViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TabHostFragment : Fragment(R.layout.fragment_tab_host) {

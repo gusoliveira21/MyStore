@@ -16,13 +16,8 @@ class MyStoreRepositoryImpl(
         return listProductEntityDomain
     }
 
-<<<<<<< Updated upstream
     override suspend fun getCategories(): List<String> {
         return myStoreService.getCategoriesList()
     }
-
-=======
-    
->>>>>>> Stashed changes
 
 }

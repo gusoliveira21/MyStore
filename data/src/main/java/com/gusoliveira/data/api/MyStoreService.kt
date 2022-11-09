@@ -1,10 +1,7 @@
 package com.gusoliveira.data.api
 
 import com.gusoliveira.data.model.ItemProduct
-import com.gusoliveira.data.model.Products
 import retrofit2.http.GET
-
-
 
 interface MyStoreService {
     @GET("products")

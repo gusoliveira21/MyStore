@@ -1,8 +1,8 @@
 package com.gusoliveira.data.util
 
 import com.gusoliveira.data.model.ItemProduct
-import com.gusoliveira.domain.entities.objectProduct.Rating
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
+import com.gusoliveira.domain.entities.objectProduct.Rating
 
 fun ItemProduct.toProductEntity() = ProductEntity(
         id = id,

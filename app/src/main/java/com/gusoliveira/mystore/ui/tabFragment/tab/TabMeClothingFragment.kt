@@ -1,14 +1,14 @@
 package com.gusoliveira.mystore.ui.tabFragment.tab
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.R.layout
 import com.gusoliveira.mystore.databinding.FragmentTabMeClothingBinding
-import com.gusoliveira.mystore.ui.tabFragment.adapterTab.AdapterTab
+import com.gusoliveira.mystore.ui.tabFragment.adapterTabProduct.AdapterTab
 import com.gusoliveira.mystore.ui.tabFragment.viewmodel.TabViewModel
 
 class TabMeClothingFragment(private val viewModel: TabViewModel) : Fragment(layout.fragment_tab_me_clothing) {
