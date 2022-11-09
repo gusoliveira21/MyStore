@@ -10,7 +10,6 @@ class RetrofitInitializer {
         .add(KotlinJsonAdapterFactory())
         .build()
 
-
     private val retrofit:Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl("https://fakestoreapi.com/")
