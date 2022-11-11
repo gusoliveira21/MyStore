@@ -3,16 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/tabHostFragment">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.gusoliveira.mystore.ui.mainFragment.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
-    <fragment
-        android:id="@+id/tabHostFragment"
-        android:name="com.gusoliveira.mystore.ui.tabFragment.host.TabHostFragment"
-        android:label="fragment_tab_host"
-        tools:layout="@layout/fragment_tab_host" />
+        android:id="@+id/homeFragment"
+        android:name="com.gusoliveira.mystore.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>
