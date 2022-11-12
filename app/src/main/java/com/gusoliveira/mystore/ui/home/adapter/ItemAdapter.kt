@@ -1,14 +1,13 @@
-package com.gusoliveira.mystore.ui.tabCategory.adapter
+package com.gusoliveira.mystore.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gusoliveira.mystore.databinding.ItemProdutBinding
-import com.gusoliveira.mystore.ui.tabCategory.adapter.ItemAdapter.ItemViewHolder
+import com.gusoliveira.mystore.ui.home.adapter.ItemAdapter.ItemViewHolder
 
 class ItemAdapter(private val list: List<String>) : RecyclerView.Adapter<ItemViewHolder>() {
-
 
     class ItemViewHolder(item: ItemProdutBinding) : RecyclerView.ViewHolder(item.root) {
         val nameProd = item.idNameProduct

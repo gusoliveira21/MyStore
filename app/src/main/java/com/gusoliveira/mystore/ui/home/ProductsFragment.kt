@@ -1,23 +1,15 @@
-package com.gusoliveira.mystore.ui.tabCategory
+package com.gusoliveira.mystore.ui.home
 
 import android.os.Bundle
-import android.system.Os
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import com.gusoliveira.mystore.R
-import com.gusoliveira.mystore.databinding.ItemProdutBinding
 import com.gusoliveira.mystore.databinding.ViewpagerBinding
-import com.gusoliveira.mystore.ui.tabCategory.adapter.ItemAdapter
-import com.gusoliveira.mystore.ui.tabCategory.adapter.PagerAdapter
 
-private lateinit var binding: ViewpagerBinding
-private const val ARG_OBJECT = "object"
-
-class CategoryFragment : Fragment() {
+class ProductsFragment : Fragment() {
+    private lateinit var binding: ViewpagerBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,6 +25,7 @@ class CategoryFragment : Fragment() {
             val textview : TextView = view.findViewById(android.R.id.text1)
             textview.text = getInt(ARG_OBJECT).toString()
         }*/
+
         /*val position = arguments?.getInt(ARG_OBJECT)
         val viewPager = binding.pagerViewP
         position.let {
@@ -48,7 +41,7 @@ class CategoryFragment : Fragment() {
 
     companion object {
         private const val CATEGORY_NAME_BUNDLE = "category_name_bundle"
-        fun newInstance(categoryName: String) = CategoryFragment().apply {
+        fun newInstance(categoryName: String) = ProductsFragment().apply {
             arguments = bundleOf(
                 CATEGORY_NAME_BUNDLE to categoryName,
             )

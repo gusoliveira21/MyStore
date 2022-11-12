@@ -1,4 +1,4 @@
-package com.gusoliveira.mystore.ui.tabCategory
+package com.gusoliveira.mystore.ui.home.viewModel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -6,9 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.gusoliveira.domain.usecase.GetCategoriesUseCase
 import kotlinx.coroutines.launch
 
-class CategoryViewModelImpl(
+class HomeViewModelImpl(
     private val getCategoriesUseCase: GetCategoriesUseCase
-) : CategoryViewModel() {
+) : HomeViewModel() {
     override val categories = MutableLiveData<List<String>>()
     override val errorCategories  = MutableLiveData<String>()
 
