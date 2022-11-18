@@ -6,5 +6,5 @@ import com.gusoliveira.domain.usecase.base.BaseUseCase
 
 class GetAllProductsUseCase(private val myStoreRepository: MyStoreRepository) :
     BaseUseCase<Nothing, List<ProductEntity>>() {
-    override suspend fun doWork(value: String)= myStoreRepository.getAllProducts()
+    override suspend fun doWork(value: String) = myStoreRepository.getAllProducts()
 }
