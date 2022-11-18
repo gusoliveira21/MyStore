@@ -1,4 +1,4 @@
-package com.gusoliveira.domain.entities
+package com.gusoliveira.domain.entities.objectProduct
 
 data class Rating(
     val count: Int,

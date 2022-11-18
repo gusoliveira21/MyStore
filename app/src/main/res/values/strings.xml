@@ -2,10 +2,11 @@
     <string name="app_name">iStore</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="tabOne">Tab One</string>
     <string name="tabTwo">Tab Two</string>
     <string name="tabTree">Tab Tree</string>
+    <string name="show_categories">show categories</string>
 </resources>

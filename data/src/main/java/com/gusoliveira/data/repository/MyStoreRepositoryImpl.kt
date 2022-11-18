@@ -1,35 +1,28 @@
 package com.gusoliveira.data.repository
 
 import com.gusoliveira.data.api.MyStoreService
-import com.gusoliveira.domain.entities.Rating
-import com.gusoliveira.domain.entities.ProductEntity
+import com.gusoliveira.data.util.toProductEntity
+import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.repository.MyStoreRepository
 
-// TODO utilizar o padrão mapper aqui https://www.baeldung.com/kotlin/data-objects
 class MyStoreRepositoryImpl(
     private val myStoreService: MyStoreService
 ) : MyStoreRepository {
-    override suspend fun getProduct(): List<ProductEntity> {
-        /**Precisa ser deste modo já que a lista será retornada sem nenhuma mudança
-         * logo, o modelo de entrada também será o modelo de saída*/
+    override suspend fun getProductsByCategory(category: String): List<ProductEntity> {
+        val listProducts = myStoreService.getProductsByCategory(category)
+        val listProductEntityDomain: MutableList<ProductEntity> = mutableListOf()
+        listProducts.map { listProductEntityDomain.add(it.toProductEntity()) }
+        return listProductEntityDomain
+    }
+
+    override suspend fun getAllProducts(): List<ProductEntity> {
         val listProducts = myStoreService.getAllProductsList()
         val listProductEntityDomain: MutableList<ProductEntity> = mutableListOf()
-        listProducts.map { data ->
-            listProductEntityDomain.add(
-                ProductEntity(
-                    id = data.id,
-                    title = data.title,
-                    price = data.price,
-                    description = data.description,
-                    category = data.category,
-                    image = data.image,
-                    Rating(
-                        rate = data.rating.rate,
-                        count = data.rating.count
-                    )
-                )
-            )
-        }
+        listProducts.map { listProductEntityDomain.add(it.toProductEntity()) }
         return listProductEntityDomain
+    }
+
+    override suspend fun getCategories(): List<String> {
+        return myStoreService.getCategoriesList()
     }
 }

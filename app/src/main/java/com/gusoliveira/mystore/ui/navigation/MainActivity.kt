@@ -1,12 +1,15 @@
 package com.gusoliveira.mystore.ui.navigation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.gusoliveira.mystore.R.layout
+import androidx.appcompat.app.AppCompatActivity
+import com.gusoliveira.mystore.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
     }
 }

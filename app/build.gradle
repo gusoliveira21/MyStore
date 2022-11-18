@@ -52,6 +52,8 @@ dependencies {
     implementation dependencies.lifecycleViewmodelKtx
     implementation dependencies.navFrag
     implementation dependencies.navUi
+    implementation dependencies.glide
+    implementation dependencies.glideTransfor
 
     def testDependencies = rootProject.ext.testDependencies
     implementation testDependencies.androidTestEspressoCore
