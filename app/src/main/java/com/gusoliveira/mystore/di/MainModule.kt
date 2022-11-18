@@ -11,12 +11,16 @@ import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewM
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModelImpl
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModelImpl
+
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val mainModule = module {
+    // Services
     single<MyStoreService> { RetrofitInitializer().getRetrofitService() }
 
+
+    // Repositories
     single<MyStoreRepository> { MyStoreRepositoryImpl(get()) }
 
     factory { GetAllProductsUseCase(get()) }
@@ -27,4 +31,5 @@ val mainModule = module {
 
     viewModel<HomeViewModel> { HomeViewModelImpl(get()) }
     viewModel<ProductViewModel> { ProductViewModelImpl(get()) }
+
 }

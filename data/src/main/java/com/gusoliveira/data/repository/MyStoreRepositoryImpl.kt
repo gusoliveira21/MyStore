@@ -26,5 +26,4 @@ class MyStoreRepositoryImpl(
     override suspend fun getCategories(): List<String> {
         return myStoreService.getCategoriesList()
     }
-
 }
