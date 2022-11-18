@@ -9,7 +9,14 @@ import com.gusoliveira.domain.repository.MyStoreRepository
 class MyStoreRepositoryImpl(
     private val myStoreService: MyStoreService
 ) : MyStoreRepository {
-    override suspend fun getProduct(): List<ProductEntity> {
+    override suspend fun getProductsByCategory(category: String): List<ProductEntity> {
+        val listProducts = myStoreService.getProductsByCategory(category)
+        val listProductEntityDomain: MutableList<ProductEntity> = mutableListOf()
+        listProducts.map { listProductEntityDomain.add(it.toProductEntity()) }
+        return listProductEntityDomain
+    }
+
+    override suspend fun getAllProducts(): List<ProductEntity> {
         val listProducts = myStoreService.getAllProductsList()
         val listProductEntityDomain: MutableList<ProductEntity> = mutableListOf()
         listProducts.map { listProductEntityDomain.add(it.toProductEntity()) }

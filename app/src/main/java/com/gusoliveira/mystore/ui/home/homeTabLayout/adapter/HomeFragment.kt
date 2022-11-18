@@ -1,4 +1,4 @@
-package com.gusoliveira.mystore.ui.home
+package com.gusoliveira.mystore.ui.home.homeTabLayout.adapter
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.gusoliveira.mystore.databinding.FragmentHomeBinding
-import com.gusoliveira.mystore.ui.home.adapter.PagerAdapter
-import com.gusoliveira.mystore.ui.home.viewModel.HomeViewModel
+import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.adapter.PagerAdapter
+import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
