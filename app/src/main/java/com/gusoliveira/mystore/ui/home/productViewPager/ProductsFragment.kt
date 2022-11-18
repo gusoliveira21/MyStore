@@ -7,23 +7,24 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.viewpager2.widget.ViewPager2
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
-import com.gusoliveira.mystore.databinding.ViewpagerBinding
+import com.gusoliveira.mystore.databinding.FragmentProductsBinding
 import com.gusoliveira.mystore.ui.home.productViewPager.adapter.ItemAdapter
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProductsFragment : Fragment() {
-    private lateinit var binding: ViewpagerBinding
-    private lateinit var viewPager: ViewPager2
+    private lateinit var binding: FragmentProductsBinding
+    private lateinit var recyclerView: RecyclerView
     private var position: String? = null
     private val viewModel: ProductViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        binding = ViewpagerBinding.inflate(layoutInflater)
+        binding = FragmentProductsBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -34,12 +35,13 @@ class ProductsFragment : Fragment() {
     }
 
     private fun observer() {
-        viewModel.product.observe(viewLifecycleOwner, Observer(::setupViewPager))
+        viewModel.product.observe(viewLifecycleOwner, Observer(::setupRecyclerView))
     }
 
-    private fun setupViewPager(list:List<ProductEntity>){
-        viewPager = binding.pagerViewP
-        viewPager.adapter = ItemAdapter(list)
+    private fun setupRecyclerView(list: List<ProductEntity>) {
+        recyclerView = binding.recyclerview
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 1)
+        recyclerView.adapter = ItemAdapter(list)
     }
 
     private fun callGetProducts() {
