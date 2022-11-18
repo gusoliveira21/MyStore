@@ -5,11 +5,13 @@ import com.gusoliveira.data.api.RetrofitInitializer
 import com.gusoliveira.data.repository.MyStoreRepositoryImpl
 import com.gusoliveira.domain.repository.MyStoreRepository
 import com.gusoliveira.domain.usecase.GetCategoriesUseCase
-import com.gusoliveira.domain.usecase.GetProductUseCase
-import com.gusoliveira.mystore.ui.navigation.MainViewModel
-import com.gusoliveira.mystore.ui.navigation.MainViewModelImpl
-import com.gusoliveira.mystore.ui.tabFragment.viewmodel.TabViewModel
-import com.gusoliveira.mystore.ui.tabFragment.viewmodel.TabViewModelImpl
+import com.gusoliveira.domain.usecase.GetAllProductsUseCase
+import com.gusoliveira.domain.usecase.GetProductsByCategoryUseCase
+import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModel
+import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModelImpl
+import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
+import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModelImpl
+
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -21,16 +23,13 @@ val mainModule = module {
     // Repositories
     single<MyStoreRepository> { MyStoreRepositoryImpl(get()) }
 
+    factory { GetAllProductsUseCase(get()) }
 
-    // Use Cases
-    factory { GetProductUseCase(get()) }
     factory { GetCategoriesUseCase(get()) }
 
+    factory { GetProductsByCategoryUseCase(get()) }
 
-    // View Models
-    viewModel<TabViewModel> { TabViewModelImpl(get()) }
+    viewModel<HomeViewModel> { HomeViewModelImpl(get()) }
+    viewModel<ProductViewModel> { ProductViewModelImpl(get()) }
 
-    viewModel<MainViewModel> {
-        MainViewModelImpl(get())
-    }
 }

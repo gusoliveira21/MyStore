@@ -13,7 +13,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Rule
 import org.junit.Test
 
-class GetProductUseCaseTestEntity {
+class GetAllProductsUseCaseTestEntity {
     @ExperimentalCoroutinesApi
     @get:Rule
     var coroutineTestRule = MainCoroutineRule()
@@ -24,11 +24,11 @@ class GetProductUseCaseTestEntity {
     @Test
     fun `checks if the return is a object`() = runBlocking {
         //arrange
-        coEvery { repository.getProduct() } returns productData
-        val getProductUseCase = GetProductUseCase(repository)
+        coEvery { repository.getAllProducts() } returns productData
+        val getAllProductsUseCase = GetAllProductsUseCase(repository)
 
         //act
-        val result = getProductUseCase.execute()
+        val result = getAllProductsUseCase.execute()
         //val result = GetProductUseCase(repository)//getProductUseCase.execute()
 
         //assert TODO corrigir erro

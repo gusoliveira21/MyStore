@@ -6,12 +6,12 @@ abstract class BaseUseCase<in Params, out R> {
     private val superVisorJob = SupervisorJob()
     private val scope = CoroutineScope(Dispatchers.Main + superVisorJob)
 
-    protected abstract suspend fun doWork(): R
+    protected abstract suspend fun doWork(value:String = ""): R
 
-    suspend fun execute(): DataResult<R> {
+    suspend fun execute(value:String = ""): DataResult<R> {
         return withContext(scope.coroutineContext) {
             try {
-                val result = withContext(Dispatchers.IO) { doWork() }
+                val result = withContext(Dispatchers.IO) { doWork(value) }
                 DataResult.Success(result)
 
             } catch (e: Throwable) {

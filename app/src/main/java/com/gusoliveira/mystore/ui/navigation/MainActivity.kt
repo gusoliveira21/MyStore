@@ -2,38 +2,60 @@ package com.gusoliveira.mystore.ui.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
+import androidx.navigation.ui.AppBarConfiguration
 import com.gusoliveira.mystore.databinding.ActivityMainBinding
-import com.gusoliveira.mystore.ui.navigation.adapter.CategoriesPagerAdapter
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: MainViewModel by viewModel()
-
-    private lateinit var binding : ActivityMainBinding
-
-    private lateinit var categoriesPagerAdapter: CategoriesPagerAdapter
-    private lateinit var viewPager: ViewPager
+    //private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-
-        setupObservers()
-
-        viewModel.getCategories()
-    }
-
-    private fun setupObservers() {
-       viewModel.categories.observe(this, ::setupTabs)
-    }
-
-    private fun setupTabs(categories: List<String>) {
-        categoriesPagerAdapter = CategoriesPagerAdapter(categories, supportFragmentManager)
-        viewPager.adapter = categoriesPagerAdapter
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+val navController = navHostFragment.navController
+NavigationUI.setupActionBarWithNavController(this,navController)*/
+
+/*val navController = findNavController(R.id.nav_host_fragment_content_main)
+appBarConfiguration = AppBarConfiguration(navController.graph)
+setupActionBarWithNavController(navController, appBarConfiguration)*/
+
+
+/*    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.fragmentContainerView)
+        return navController.navigateUp()
+    }*/
+
+/*    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration)
+                || super.onSupportNavigateUp()
+    }*/

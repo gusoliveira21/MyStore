@@ -8,4 +8,5 @@
     <string name="tabOne">Tab One</string>
     <string name="tabTwo">Tab Two</string>
     <string name="tabTree">Tab Tree</string>
+    <string name="show_categories">show categories</string>
 </resources>

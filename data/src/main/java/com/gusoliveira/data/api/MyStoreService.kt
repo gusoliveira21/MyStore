@@ -1,18 +1,20 @@
 package com.gusoliveira.data.api
 
 import com.gusoliveira.data.model.ItemProduct
-import com.gusoliveira.data.model.Products
 import retrofit2.http.GET
-
-
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface MyStoreService {
-    //TODO Ao invez do ItemProduct (modelo da camada Data), não posso usar ProductEntity (modelo da camada domain)? devido a elas serem iguais
-    //TODO O jeito que foi declarado List<ItemProduct> a baixo ta correto? pode ser feito assim?
-    /**
-    O que é mais eficiente ou mis válido? pegar todos os produtos como feito a baixo, ou
-    pegar os produtos de cada categoria somente quando me mover pelos pages?
-    */
+    //https://fakestoreapi.com/products/category/jewelery
+
+    // 3/gallery/search/?q=cats
+    //@GET("3/gallery/search/")
+    //suspend fun catList(@Query("q") params: String): CatDataClass
+
+    @GET("products/category/{id}")
+    suspend fun getProductsByCategory(@Path("id") params: String): List<ItemProduct>
+
     @GET("products")
     suspend fun getAllProductsList(): List<ItemProduct>
 
