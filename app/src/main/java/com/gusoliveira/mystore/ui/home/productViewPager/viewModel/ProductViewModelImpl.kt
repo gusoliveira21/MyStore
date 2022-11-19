@@ -5,10 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.usecase.GetProductsByCategoryUseCase
+import com.gusoliveira.mystore.ui.router.Router
 import kotlinx.coroutines.launch
 
-class ProductViewModelImpl(private val getProductsByCategories: GetProductsByCategoryUseCase) :
-    ProductViewModel() {
+class ProductViewModelImpl(
+    private val getProductsByCategories: GetProductsByCategoryUseCase,
+    private val router: Router
+) : ProductViewModel() {
     override val product = MutableLiveData<List<ProductEntity>>()
     override val errorProduct = MutableLiveData<String>()
 
@@ -17,6 +20,10 @@ class ProductViewModelImpl(private val getProductsByCategories: GetProductsByCat
             val result = getProductsByCategories.execute(category)
             result.handleResult(::getProductSuccess, ::getProductFailed)
         }
+    }
+
+    override fun onProductClicked(product: ProductEntity) {
+        router.homeFragmentToProductSelected(product)
     }
 
     override fun getProductSuccess(products: List<ProductEntity>) {

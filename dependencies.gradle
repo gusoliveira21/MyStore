@@ -31,6 +31,7 @@ ext {
     glideVersion = "4.12.0"
     glideTransforVersion = "4.3.0"
 
+    //Moshi
     moshiVersion = "2.4.0"
     moshiKotlinVersion = "1.12.0"
 
@@ -49,7 +50,6 @@ ext {
             retrofit2Retrofit      : "com.squareup.retrofit2:retrofit:$retrofit2",
             moshiKotlin            : "com.squareup.moshi:moshi-kotlin:$moshiKotlinVersion",
             retrofit2ConverterMoshi: "com.squareup.retrofit2:converter-moshi:$moshiVersion",
-            //retrofit2ConverterGson : "com.squareup.retrofit2:converter-gson:$retrofit2",
             constraintlayout       : "androidx.constraintlayout:constraintlayout:$constraintlayout",
             lifecycleLivedataKtx   : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle",
             lifecycleViewmodelKtx  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle",
