@@ -1,4 +1,4 @@
-package com.gusoliveira.mystore.ui.navigation
+package com.gusoliveira.mystore.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

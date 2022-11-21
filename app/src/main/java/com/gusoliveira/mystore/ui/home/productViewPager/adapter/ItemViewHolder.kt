@@ -12,7 +12,7 @@ class ItemViewHolder(private val binding: ItemProdutBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun favoriteProduct() {
-        //TODO implementa funcionalidade de favoritar itens
+        //TODO implementar funcionalidade de favoritar itens
     }
 
     fun clickedProduct(product: ProductEntity, onClickItem: (ProductEntity) -> Unit) {
