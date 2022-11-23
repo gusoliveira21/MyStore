@@ -1,5 +1,9 @@
 package com.gusoliveira.domain.entities.objectProduct
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class ProductEntity(
     var id: Int,
     var title: String,
@@ -8,4 +12,4 @@ data class ProductEntity(
     var category: String,
     var image: String,
     var rating: Rating
-)
+) : Parcelable

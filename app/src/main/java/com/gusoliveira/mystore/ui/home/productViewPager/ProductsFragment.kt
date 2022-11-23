@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
-import com.gusoliveira.mystore.databinding.FragmentProductsBinding
+import com.gusoliveira.mystore.databinding.FragmentProductListBinding
 import com.gusoliveira.mystore.ui.home.productViewPager.adapter.ItemAdapter
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -20,7 +20,7 @@ import org.koin.core.parameter.parametersOf
 class ProductsFragment : Fragment() {
 
     private val navController by lazy { findNavController() }
-    private lateinit var binding: FragmentProductsBinding
+    private lateinit var binding: FragmentProductListBinding
     private lateinit var recyclerView: RecyclerView
     private var position: String? = null
     private val viewModel: ProductViewModel by viewModel { parametersOf(navController) }
@@ -28,7 +28,7 @@ class ProductsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentProductsBinding.inflate(layoutInflater)
+        binding = FragmentProductListBinding.inflate(layoutInflater)
         return binding.root
     }
 

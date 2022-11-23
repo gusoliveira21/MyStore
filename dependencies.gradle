@@ -35,11 +35,14 @@ ext {
     moshiVersion = "2.4.0"
     moshiKotlinVersion = "1.12.0"
 
+    timberVersion = "4.5.1"
+
     dependencies = [
             kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
             rxJava                 : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
             koinCore               : "io.insert-koin:koin-core:$koinVersion",
             koinAndroid            : "io.insert-koin:koin-android:$koinVersion",
+            //koinViewModel          : "koin-android-viewmodel:$koinVersion",
             rxKotlin               : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
             rxAndroid              : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
             coroutineCore          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
@@ -57,6 +60,7 @@ ext {
             navUi                  : "androidx.navigation:navigation-ui-ktx:$navUiVersion",
             glide                  : "com.github.bumptech.glide:glide:$glideVersion",
             glideTransfor          : "jp.wasabeef:glide-transformations:$glideTransforVersion",
+            timber                 : "com.jakewharton.timber:timber:$timberVersion"
     ]
 
     junitVersion = "4.13.2"

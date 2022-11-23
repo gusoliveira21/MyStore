@@ -23,7 +23,7 @@ class ProductViewModelImpl(
     }
 
     override fun onProductClicked(product: ProductEntity) {
-        router.homeFragmentToProductSelected(product)
+        router.toProduct(product)
     }
 
     override fun getProductSuccess(products: List<ProductEntity>) {
