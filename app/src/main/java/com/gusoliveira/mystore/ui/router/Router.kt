@@ -9,4 +9,8 @@ class Router(private val navController: NavController) {
     fun toProduct(product: ProductEntity) {
         navController.navigate(HomeFragmentDirections.toProductDetailsFragment(product))
     }
+
+    fun toCheckout(product: ProductEntity){
+        navController.navigate(HomeFragmentDirections.actionProductDetailsFragmentToCheckoutFragment(product))
+    }
 }

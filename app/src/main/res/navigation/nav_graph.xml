@@ -6,14 +6,18 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
+    <action
+        android:id="@+id/to_productDetailsFragment"
+        app:destination="@id/productDetailsFragment" />
+    <action
+        android:id="@+id/action_productDetailsFragment_to_checkoutFragment"
+        app:destination="@id/purchaseDetailsFragment" />
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.HomeFragment"
         android:label="iStore"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/to_productDetailsFragment"
-            app:destination="@id/productDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
@@ -25,8 +29,12 @@
             app:argType="com.gusoliveira.domain.entities.objectProduct.ProductEntity" />
     </fragment>
     <fragment
-        android:id="@+id/checkoutFragment"
-        android:name="com.gusoliveira.mystore.checkoutFragment"
+        android:id="@+id/purchaseDetailsFragment"
+        android:name="com.gusoliveira.mystore.ui.purchase.purchaseDetails.PurchaseDetailsFragment"
         android:label="fragment_checkout"
-        tools:layout="@layout/fragment_checkout" />
+        tools:layout="@layout/fragment_purchase_details">
+        <argument
+            android:name="product"
+            app:argType="com.gusoliveira.domain.entities.objectProduct.ProductEntity" />
+    </fragment>
 </navigation>

@@ -25,6 +25,7 @@ class ProductsFragment : Fragment() {
     private var position: String? = null
     private val viewModel: ProductViewModel by viewModel { parametersOf(navController) }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {

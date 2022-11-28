@@ -5,10 +5,12 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.textview.MaterialTextView
 import com.gusoliveira.mystore.databinding.FragmentProductDetailsBinding
 import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
+import com.gusoliveira.mystore.ui.router.Router
 import jp.wasabeef.glide.transformations.CropSquareTransformation
 
 class ProductDetailsViewModelImpl(
     private val args: ProductDetailsFragmentArgs,
+    private val router: Router
 ) : ProductDetailsViewModel() {
 
     override fun setProduct(binding: FragmentProductDetailsBinding) {
@@ -29,9 +31,19 @@ class ProductDetailsViewModelImpl(
         idProductTitle.text = args.product.title
     }
 
+
     override fun setDescription(idDescriptionProduct: MaterialTextView) {
         idDescriptionProduct.text = args.product.description
     }
 
+    override fun buy() {
+        //verifica se esta logado
+        //sim -> tela de detalhes da compra
+        //não -> faça login
+        if(true){
+            //Ir para detalhes de compra/checkout
+            router.toCheckout(args.product)
+        }
+    }
 
 }

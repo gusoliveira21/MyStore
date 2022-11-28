@@ -9,4 +9,5 @@ abstract class ProductDetailsViewModel : ViewModel() {
     abstract fun setImage(binding: FragmentProductDetailsBinding)
     abstract fun setTitle(idProductTitle: MaterialTextView)
     abstract fun setDescription(idDescriptionProduct: MaterialTextView)
+    abstract fun buy()
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.gusoliveira.mystore.databinding.FragmentProductDetailsBinding
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModel
@@ -13,9 +14,16 @@ import org.koin.core.parameter.parametersOf
 
 class ProductDetailsFragment : Fragment() {
     private val args: ProductDetailsFragmentArgs by navArgs()
-    private val viewModel: ProductDetailsViewModel by viewModel { parametersOf(args) }
+    private val navController by lazy { findNavController() }
+    private val viewModel: ProductDetailsViewModel by viewModel {
+        parametersOf(
+            args,
+            navController
+        )
+    }
     private var _binding: FragmentProductDetailsBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,5 +34,12 @@ class ProductDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.setProduct(binding)
+        checkoutProduct()
+    }
+
+    private fun checkoutProduct() {
+        binding.idBtBuy.setOnClickListener {
+            viewModel.buy()
+        }
     }
 }

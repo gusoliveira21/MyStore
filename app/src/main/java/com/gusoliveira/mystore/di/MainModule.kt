@@ -15,6 +15,8 @@ import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewMod
 import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModel
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModelImpl
+import com.gusoliveira.mystore.ui.purchase.purchaseDetails.viewModel.PurchaseDetailsViewModel
+import com.gusoliveira.mystore.ui.purchase.purchaseDetails.viewModel.PurchaseDetailsViewModelImpl
 import com.gusoliveira.mystore.ui.router.Router
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.parameter.parametersOf
@@ -40,7 +42,12 @@ val mainModule = module {
     viewModel<ProductViewModel> { (navController: NavController) ->
         ProductViewModelImpl(get(), get { parametersOf(navController) })
     }
-    viewModel<ProductDetailsViewModel> { (args: ProductDetailsFragmentArgs) ->
-        ProductDetailsViewModelImpl(args)
+    viewModel<ProductDetailsViewModel> { (args: ProductDetailsFragmentArgs,
+                                          navController: NavController) ->
+        ProductDetailsViewModelImpl(args, get{ parametersOf(navController)})
+    }
+    viewModel<PurchaseDetailsViewModel> { (args: ProductDetailsFragmentArgs,
+                                             navController: NavController) ->
+        PurchaseDetailsViewModelImpl(args, get{ parametersOf(navController)})
     }
 }

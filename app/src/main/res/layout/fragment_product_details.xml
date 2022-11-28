@@ -70,7 +70,7 @@ Volutpat blandit aliquam etiam erat. Urna nunc id cursus metus aliquam eleifend 
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/id_button_buy_product"
+        android:id="@+id/id_bt_buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
