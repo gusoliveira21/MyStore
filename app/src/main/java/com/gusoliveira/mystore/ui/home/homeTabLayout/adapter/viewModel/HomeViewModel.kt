@@ -2,6 +2,7 @@ package com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 
 abstract class HomeViewModel : ViewModel() {
     abstract val categories: LiveData<List<String>>

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id "androidx.navigation.safeargs"
 }
 
 android {
@@ -44,6 +45,7 @@ dependencies {
     def dependencies = rootProject.ext.dependencies
     implementation dependencies.koinCore
     implementation dependencies.koinAndroid
+    //implementation dependencies.koinViewModel
     implementation dependencies.core
     implementation dependencies.appCompact
     implementation dependencies.androidMaterial
@@ -54,6 +56,7 @@ dependencies {
     implementation dependencies.navUi
     implementation dependencies.glide
     implementation dependencies.glideTransfor
+    implementation dependencies.timber
 
     def testDependencies = rootProject.ext.testDependencies
     implementation testDependencies.androidTestEspressoCore

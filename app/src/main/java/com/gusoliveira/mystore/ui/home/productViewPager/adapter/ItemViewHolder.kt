@@ -11,9 +11,17 @@ import jp.wasabeef.glide.transformations.CropSquareTransformation
 class ItemViewHolder(private val binding: ItemProdutBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
+    fun favoriteProduct() {
+        //TODO implementar funcionalidade de favoritar itens
+    }
+
+    fun clickedProduct(product: ProductEntity, onClickItem: (ProductEntity) -> Unit) {
+        binding.cardview.setOnClickListener { onClickItem(product) }
+    }
+
     fun setCardItem(product: ProductEntity) {
         binding.idNameProduct.text = product.title
-        binding.idPriceProduct.text = product.price.toString()
+        binding.idPriceProduct.text = "R$ " + product.price
         setImage(product.image, binding.idImageProduct)
     }
 

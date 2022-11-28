@@ -10,4 +10,5 @@ abstract class ProductViewModel : ViewModel() {
     abstract fun getProducts(category: String)
     abstract fun getProductSuccess(products: List<ProductEntity>)
     abstract fun getProductFailed()
+    abstract fun onProductClicked(product: ProductEntity)
 }
