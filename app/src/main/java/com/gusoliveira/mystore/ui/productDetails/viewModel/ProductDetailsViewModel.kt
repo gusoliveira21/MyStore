@@ -1,4 +1,4 @@
-package com.gusoliveira.mystore.ui.product.viewModel
+package com.gusoliveira.mystore.ui.productDetails.viewModel
 
 import androidx.lifecycle.ViewModel
 import com.google.android.material.textview.MaterialTextView

@@ -1,10 +1,10 @@
-package com.gusoliveira.mystore.ui.product.viewModel
+package com.gusoliveira.mystore.ui.productDetails.viewModel
 
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.textview.MaterialTextView
 import com.gusoliveira.mystore.databinding.FragmentProductDetailsBinding
-import com.gusoliveira.mystore.ui.product.ProductDetailsFragmentArgs
+import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
 import jp.wasabeef.glide.transformations.CropSquareTransformation
 
 class ProductDetailsViewModelImpl(

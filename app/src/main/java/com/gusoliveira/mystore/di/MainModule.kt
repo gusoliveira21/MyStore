@@ -12,9 +12,9 @@ import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewM
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModelImpl
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModelImpl
-import com.gusoliveira.mystore.ui.product.ProductDetailsFragmentArgs
-import com.gusoliveira.mystore.ui.product.viewModel.ProductDetailsViewModel
-import com.gusoliveira.mystore.ui.product.viewModel.ProductDetailsViewModelImpl
+import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
+import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModel
+import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModelImpl
 import com.gusoliveira.mystore.ui.router.Router
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.parameter.parametersOf

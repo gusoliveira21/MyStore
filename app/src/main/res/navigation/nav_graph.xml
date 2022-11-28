@@ -17,11 +17,16 @@
     </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.gusoliveira.mystore.ui.product.ProductDetailsFragment"
+        android:name="com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragment"
         android:label="Product"
         tools:layout="@layout/fragment_product_details">
         <argument
             android:name="product"
             app:argType="com.gusoliveira.domain.entities.objectProduct.ProductEntity" />
     </fragment>
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.gusoliveira.mystore.checkoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" />
 </navigation>
