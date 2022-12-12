@@ -7,7 +7,7 @@ import java.util.*
 
 
 /** Class that handles authentication w/ login credentials and retrieves user information. */
-class LoginDataSource : AppCompatActivity() {
+class LoginDataSource {
 
     fun login(username: String, password: String): DataResult<LoggedInUser> {
         //try {

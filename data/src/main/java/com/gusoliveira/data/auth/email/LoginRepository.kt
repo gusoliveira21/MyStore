@@ -48,7 +48,7 @@ class LoginRepository(val logindataSoure: LoginDataSource, val loginWithGmail: L
 
 
     fun loginWithGmail(){
-        loginWithGmail.signIn()
+        loginWithGmail.setupUI()
     }
 
 }
