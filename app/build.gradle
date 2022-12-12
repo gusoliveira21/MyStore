@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id "androidx.navigation.safeargs"
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -56,6 +57,13 @@ dependencies {
     implementation dependencies.glide
     implementation dependencies.glideTransfor
     implementation dependencies.timber
+
+    implementation dependencies.fireAnalytics
+    implementation dependencies.fireBom
+    implementation dependencies.fireUiAuth
+    implementation dependencies.fireAuth
+    implementation dependencies.fireCore
+    implementation dependencies.gmailAuth
 
     def testDependencies = rootProject.ext.testDependencies
     implementation testDependencies.androidTestEspressoCore
