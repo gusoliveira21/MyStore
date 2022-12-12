@@ -2,10 +2,9 @@ package com.gusoliveira.mystore.ui.login.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import android.util.Patterns
-import com.gusoliveira.mystore.data.LoginRepository
-import com.gusoliveira.mystore.data.Result
+import com.gusoliveira.data.auth.email.LoginRepository
+import com.gusoliveira.domain.usecase.base.DataResult
 
 import com.gusoliveira.mystore.R.string
 import com.gusoliveira.mystore.ui.login.LoggedInUserView
@@ -20,13 +19,16 @@ class LoginViewModelImpl(private val loginRepository: LoginRepository) : LoginVi
     private val _loginResult = MutableLiveData<LoginResult>()
     override val loginResult: LiveData<LoginResult> = _loginResult
 
-    override fun login(username: String, password: String) {
-        // can be launched in a separate asynchronous job
-        val result = loginRepository.login(username, password)
+    override fun loginWithGmail(){
+        loginRepository.loginWithGmail()
+    }
 
-        if (result is Result.Success) {
-            _loginResult.value =
-                LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
+    override fun loginWithEmail(username: String, password: String) {
+        /** can be launched in a separate asynchronous job */
+        val result = loginRepository.loginWithEmail(username, password)
+
+        if (result is DataResult.Success) {
+            _loginResult.value = LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
         } else {
             _loginResult.value = LoginResult(error = string.login_failed)
         }
@@ -44,6 +46,7 @@ class LoginViewModelImpl(private val loginRepository: LoginRepository) : LoginVi
 
     // A placeholder username validation check
     override fun isUserNameValid(username: String): Boolean {
+        //TODO: Deve-se melhorar a lógica para reconhecer melhor os padrões de email
         return if (username.contains("@")) {
             Patterns.EMAIL_ADDRESS.matcher(username).matches()
         } else {

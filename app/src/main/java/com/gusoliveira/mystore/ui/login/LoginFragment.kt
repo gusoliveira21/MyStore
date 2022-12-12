@@ -1,12 +1,12 @@
 package com.gusoliveira.mystore.ui.login
 
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,16 +16,13 @@ import com.gusoliveira.mystore.databinding.FragmentLoginBinding
 
 import com.gusoliveira.mystore.R
 import com.gusoliveira.mystore.ui.login.viewModel.LoginViewModel
-import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
 
-    private val loginViewModel: LoginViewModel by viewModel()
+    private val viewModel: LoginViewModel by viewModel()
     private var _binding: FragmentLoginBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -45,8 +42,19 @@ class LoginFragment : Fragment() {
         val passwordEditText = binding.password
         val loginButton = binding.login
         val loadingProgressBar = binding.loading
+        val loginWithGoogle = binding.btLoginGmail
 
-        loginViewModel.loginFormState.observe(viewLifecycleOwner,
+        loginWithGoogle.setOnClickListener{
+            viewModel.loginWithGmail()
+            Log.e("loginError", "Click realizado")
+        }
+
+        /**Somente validação:
+         * Se o user for null -> return the Observer
+         * Se o user estiver logado -> true
+         * Se der erro no texto -> send msg
+         * */
+        viewModel.loginFormState.observe(viewLifecycleOwner,
             Observer { loginFormState ->
                 if (loginFormState == null) {
                     return@Observer
@@ -60,7 +68,7 @@ class LoginFragment : Fragment() {
                 }
             })
 
-        loginViewModel.loginResult.observe(viewLifecycleOwner,
+        viewModel.loginResult.observe(viewLifecycleOwner,
             Observer { loginResult ->
                 loginResult ?: return@Observer
                 loadingProgressBar.visibility = View.GONE
@@ -82,7 +90,7 @@ class LoginFragment : Fragment() {
             }
 
             override fun afterTextChanged(s: Editable) {
-                loginViewModel.loginDataChanged(
+                viewModel.loginDataChanged(
                     usernameEditText.text.toString(),
                     passwordEditText.text.toString()
                 )
@@ -92,7 +100,7 @@ class LoginFragment : Fragment() {
         passwordEditText.addTextChangedListener(afterTextChangedListener)
         passwordEditText.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-                loginViewModel.login(
+                viewModel.loginWithEmail(
                     usernameEditText.text.toString(),
                     passwordEditText.text.toString()
                 )
@@ -101,8 +109,11 @@ class LoginFragment : Fragment() {
         }
 
         loginButton.setOnClickListener {
+            /** When the button is clicked,
+             * the function Login by ViewModel is called,
+             * sending the userName and password */
             loadingProgressBar.visibility = View.VISIBLE
-            loginViewModel.login(
+            viewModel.loginWithEmail(
                 usernameEditText.text.toString(),
                 passwordEditText.text.toString()
             )

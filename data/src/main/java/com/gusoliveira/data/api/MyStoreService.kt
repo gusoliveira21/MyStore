@@ -1,6 +1,6 @@
 package com.gusoliveira.data.api
 
-import com.gusoliveira.data.model.ItemProduct
+import com.gusoliveira.data.model.itemProduct.ItemProduct
 import retrofit2.http.GET
 import retrofit2.http.Path
 

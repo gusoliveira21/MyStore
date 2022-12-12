@@ -1,4 +1,4 @@
-package com.gusoliveira.data.model
+package com.gusoliveira.data.model.itemProduct
 
 import com.squareup.moshi.Json
 

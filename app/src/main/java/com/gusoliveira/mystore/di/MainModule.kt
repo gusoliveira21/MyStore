@@ -8,8 +8,9 @@ import com.gusoliveira.domain.repository.MyStoreRepository
 import com.gusoliveira.domain.usecase.GetAllProductsUseCase
 import com.gusoliveira.domain.usecase.GetCategoriesUseCase
 import com.gusoliveira.domain.usecase.GetProductsByCategoryUseCase
-import com.gusoliveira.mystore.data.LoginDataSource
-import com.gusoliveira.mystore.data.LoginRepository
+import com.gusoliveira.data.auth.email.LoginDataSource
+import com.gusoliveira.data.auth.email.LoginRepository
+import com.gusoliveira.data.auth.gmail.LoginWithGmail
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModel
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModelImpl
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
@@ -41,9 +42,11 @@ val mainModule = module {
 
     factory { (navController: NavController) -> Router(navController) }
 
-    factory { LoginRepository(get()) }
+    factory { LoginRepository(get(), get()) }
 
     factory { LoginDataSource() }
+
+    factory { LoginWithGmail() }
 
     viewModel<HomeViewModel> { HomeViewModelImpl(get()) }
 
