@@ -1,5 +1,6 @@
 package com.gusoliveira.mystore.ui.login.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -66,6 +67,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    fun logOut(){
+        startActivity(LoginActivity.getLaunchIntent(this))
+        FirebaseAuth.getInstance().signOut();
+    }
+
     private fun signIn() {
         val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
@@ -80,6 +86,22 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
             }
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    companion object {
+        fun getLaunchIntent(from: Context) = Intent(from, LoginActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         }
     }
 

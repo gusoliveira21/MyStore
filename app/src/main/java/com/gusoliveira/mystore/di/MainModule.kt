@@ -8,10 +8,15 @@ import com.gusoliveira.domain.repository.MyStoreRepository
 import com.gusoliveira.domain.usecase.GetAllProductsUseCase
 import com.gusoliveira.domain.usecase.GetCategoriesUseCase
 import com.gusoliveira.domain.usecase.GetProductsByCategoryUseCase
+//import com.gusoliveira.data.auth.email.LoginDataSource
+//import com.gusoliveira.data.auth.email.LoginRepository
+//import com.gusoliveira.data.auth.gmail.LoginWithGmail
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModel
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModelImpl
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModelImpl
+//import com.gusoliveira.mystore.ui.login.viewModel.LoginViewModel
+//import com.gusoliveira.mystore.ui.login.viewModel.LoginViewModelImpl
 import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModel
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModelImpl
@@ -37,6 +42,12 @@ val mainModule = module {
 
     factory { (navController: NavController) -> Router(navController) }
 
+    //factory { LoginRepository(get(), get()) }
+
+    //factory { LoginDataSource() }
+
+    //factory { LoginWithGmail() }
+
     viewModel<HomeViewModel> { HomeViewModelImpl(get()) }
 
     viewModel<ProductViewModel> { (navController: NavController) ->
@@ -50,5 +61,6 @@ val mainModule = module {
                                               navController: NavController) ->
         PurchaseDetailsViewModelImpl(args, get { parametersOf(navController) })
     }
+    //viewModel<LoginViewModel> { LoginViewModelImpl(get()) }
 
 }
