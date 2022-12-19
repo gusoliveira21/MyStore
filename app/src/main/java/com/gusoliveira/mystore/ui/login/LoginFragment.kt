@@ -1,10 +1,14 @@
-package com.gusoliveira.mystore.ui.login.ui
+package com.gusoliveira.mystore.ui.login
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -14,31 +18,38 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.gusoliveira.mystore.R
-import com.gusoliveira.mystore.databinding.ActivityLoginBinding
-import com.gusoliveira.mystore.navigation.MainActivity
+import com.gusoliveira.mystore.databinding.FragmentLoginBinding
+import com.gusoliveira.mystore.ui.login.viewModel.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
-class LoginActivity : AppCompatActivity() {
+class LoginFragment : Fragment() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
+    private val navController by lazy { findNavController() }
+    private val viewModel: LoginViewModel by viewModel { parametersOf(navController) }
 
     private val RC_SIGN_IN: Int = 1
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var mGoogleSignInOptions: GoogleSignInOptions
-
     private lateinit var firebaseAuth: FirebaseAuth
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         firebaseAuth = FirebaseAuth.getInstance()
-
         configureGoogleSignIn()
         setupUI()
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -48,7 +59,11 @@ class LoginActivity : AppCompatActivity() {
                 val account = task.getResult(ApiException::class.java)
                 account?.let { firebaseAuthWithGoogle(account) }
             } catch (e: ApiException) {
-                Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    requireContext().applicationContext,
+                    "Google sign in failed:(",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
     }
@@ -58,7 +73,8 @@ class LoginActivity : AppCompatActivity() {
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
+        mGoogleSignInClient =
+            GoogleSignIn.getClient(requireContext().applicationContext, mGoogleSignInOptions)
     }
 
     private fun setupUI() {
@@ -67,8 +83,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun logOut(){
-        startActivity(LoginActivity.getLaunchIntent(this))
+    fun logOut() {
+        //TODO: Adiciona Rota para a tela inicial do App
         FirebaseAuth.getInstance().signOut();
     }
 
@@ -81,10 +97,13 @@ class LoginActivity : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                startActivity(intent)
+                //TODO: Adiciona Rota para a tela anterior
             } else {
-                Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    requireContext().applicationContext,
+                    "Google sign in failed:(",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
     }
@@ -93,14 +112,12 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            //TODO: Adiciona Rota para a tela inicial do app
         }
     }
 
     companion object {
-        fun getLaunchIntent(from: Context) = Intent(from, LoginActivity::class.java).apply {
+        fun getLaunchIntent(from: Context) = Intent(from, LoginFragment::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         }
     }

@@ -39,7 +39,7 @@ class ProductDetailsFragment : Fragment() {
     }
 
     private fun listeners(){
-        //TODO: Ao clicar no botao, realiza a ação
+        //TODO: Ao clicar no botao, realiza a compra
         binding.idBtAddToShoppingList.setOnClickListener {
             viewModel.addProductToShoppingList()
         }

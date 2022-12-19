@@ -41,13 +41,6 @@ dependencies {
     implementation dependencies.retrofit2ConverterMoshi
     implementation dependencies.moshiKotlin
 
-    implementation dependencies.fireAnalytics
-    implementation dependencies.fireBom
-    implementation dependencies.fireUiAuth
-    implementation dependencies.fireAuth
-    implementation dependencies.fireCore
-    implementation dependencies.gmailAuth
-
     def testDependencies = rootProject.ext.testDependencies
     implementation testDependencies.androidTestEspressoCore
 }

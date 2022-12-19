@@ -1,8 +1,11 @@
 package com.gusoliveira.mystore.ui.productDetails.viewModel
 
+import android.util.Log
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.textview.MaterialTextView
+import com.google.firebase.auth.FirebaseAuth
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.databinding.FragmentProductDetailsBinding
 import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
@@ -48,9 +51,11 @@ class ProductDetailsViewModelImpl(
         //verifica se esta logado
         //sim -> tela de detalhes da compra
         //não -> faça login
+        val user = FirebaseAuth.getInstance().currentUser
+        Log.e("userAuth","${FirebaseAuth.getInstance().currentUser}")
         if (true) {
             //Ir para detalhes de compra/checkout
-            router.toCheckout(args.product)
+            //router.toCheckout(args.product)
         }
     }
 
