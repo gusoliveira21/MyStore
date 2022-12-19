@@ -3,6 +3,7 @@ package com.gusoliveira.mystore.ui.productDetails.viewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.textview.MaterialTextView
+import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.databinding.FragmentProductDetailsBinding
 import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
 import com.gusoliveira.mystore.ui.router.Router
@@ -12,6 +13,13 @@ class ProductDetailsViewModelImpl(
     private val args: ProductDetailsFragmentArgs,
     private val router: Router
 ) : ProductDetailsViewModel() {
+
+    //TODO: após configurar o firebase, esse armazenamento será no database real-time
+    override var shoppingList: ArrayList<ProductEntity> = arrayListOf()
+
+    override fun addProductToShoppingList() {
+        shoppingList.add(args.product)
+    }
 
     override fun setProduct(binding: FragmentProductDetailsBinding) {
         setImage(binding)
@@ -40,7 +48,7 @@ class ProductDetailsViewModelImpl(
         //verifica se esta logado
         //sim -> tela de detalhes da compra
         //não -> faça login
-        if(true){
+        if (true) {
             //Ir para detalhes de compra/checkout
             router.toCheckout(args.product)
         }

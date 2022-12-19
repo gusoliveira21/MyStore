@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id "androidx.navigation.safeargs"
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -40,12 +41,11 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
+    implementation 'androidx.annotation:annotation:1.5.0'
 
     def dependencies = rootProject.ext.dependencies
     implementation dependencies.koinCore
     implementation dependencies.koinAndroid
-    //implementation dependencies.koinViewModel
     implementation dependencies.core
     implementation dependencies.appCompact
     implementation dependencies.androidMaterial
@@ -57,6 +57,13 @@ dependencies {
     implementation dependencies.glide
     implementation dependencies.glideTransfor
     implementation dependencies.timber
+
+    implementation dependencies.fireAnalytics
+    implementation dependencies.fireBom
+    implementation dependencies.fireUiAuth
+    implementation dependencies.fireAuth
+    implementation dependencies.fireCore
+    implementation dependencies.gmailAuth
 
     def testDependencies = rootProject.ext.testDependencies
     implementation testDependencies.androidTestEspressoCore
