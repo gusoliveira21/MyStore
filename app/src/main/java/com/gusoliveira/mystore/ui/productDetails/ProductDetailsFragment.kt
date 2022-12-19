@@ -35,14 +35,6 @@ class ProductDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.setProduct(binding)
         checkoutProduct()
-        listeners()
-    }
-
-    private fun listeners(){
-        //TODO: Ao clicar no botao, realiza a ação
-        binding.idBtAddToShoppingList.setOnClickListener {
-            viewModel.addProductToShoppingList()
-        }
     }
 
     private fun checkoutProduct() {

@@ -44,6 +44,7 @@ ext {
             rxJava                 : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
             koinCore               : "io.insert-koin:koin-core:$koinVersion",
             koinAndroid            : "io.insert-koin:koin-android:$koinVersion",
+            //koinViewModel          : "koin-android-viewmodel:$koinVersion",
             rxKotlin               : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
             rxAndroid              : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
             coroutineCore          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
@@ -63,14 +64,6 @@ ext {
             glideTransfor          : "jp.wasabeef:glide-transformations:$glideTransforVersion",
             timber                 : "com.jakewharton.timber:timber:$timberVersion",
             scalifiedFab           : "com.scalified:fab:$scalifiedFabVersion",
-
-            fireUiAuth             : 'com.firebaseui:firebase-ui-auth:8.0.1',
-            fireAnalytics          : 'com.google.firebase:firebase-analytics-ktx',
-            fireBom                : 'com.google.firebase:firebase-bom:0.25.0',
-            fireAuth               : 'com.google.firebase:firebase-auth:16.1.0',
-            fireCore               : 'com.google.firebase:firebase-core:16.0.4',
-            gmailAuth              : 'com.google.android.gms:play-services-auth:16.0.4',
-            facebookSdk            : 'com.facebook.android:facebook-android-sdk:4.41.0', //n usado
     ]
 
     junitVersion = "4.13.2"

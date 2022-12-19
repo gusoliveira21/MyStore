@@ -2,16 +2,15 @@
 
 buildscript{
     apply from: 'dependencies.gradle'
-    repositories {
+    /*repositories {
         google()
         jcenter()
 
-    }
+    }*/
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "com.android.tools.build:gradle:$buildTools"
         classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3'
-        classpath 'com.google.gms:google-services:4.3.14'
     }
 }
 plugins {
@@ -19,8 +18,6 @@ plugins {
     id 'com.android.library' version '7.3.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
 }
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
