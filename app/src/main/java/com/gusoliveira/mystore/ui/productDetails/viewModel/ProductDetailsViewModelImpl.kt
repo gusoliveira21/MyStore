@@ -52,10 +52,13 @@ class ProductDetailsViewModelImpl(
         //sim -> tela de detalhes da compra
         //não -> faça login
         val user = FirebaseAuth.getInstance().currentUser
-        Log.e("userAuth","${FirebaseAuth.getInstance().currentUser}")
-        if (true) {
+        if (user != null) {
+            Log.e("userAuth","Logado")
             //Ir para detalhes de compra/checkout
             //router.toCheckout(args.product)
+        }else{
+            Log.e("userAuth","desLogado")
+
         }
     }
 
