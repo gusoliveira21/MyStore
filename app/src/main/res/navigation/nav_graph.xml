@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
+
+    <action
+        android:id="@+id/to_productDetailsFragment"
+        app:destination="@id/productDetailsFragment" />
+    <action
+        android:id="@+id/action_productDetailsFragment_to_checkoutFragment"
+        app:destination="@id/purchaseDetailsFragment" />
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="iStore"
+        tools:layout="@layout/fragment_home" >
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragment"
+        android:label="Product"
+        tools:layout="@layout/fragment_product_details">
+        <argument
+            android:name="product"
+            app:argType="com.gusoliveira.domain.entities.objectProduct.ProductEntity" />
+    </fragment>
+    <fragment
+        android:id="@+id/purchaseDetailsFragment"
+        android:name="com.gusoliveira.mystore.ui.purchase.purchaseDetails.PurchaseDetailsFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_purchase_details">
+        <argument
+            android:name="product"
+            app:argType="com.gusoliveira.domain.entities.objectProduct.ProductEntity" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.gusoliveira.mystore.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
 </navigation>

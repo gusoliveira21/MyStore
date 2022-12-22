@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.ListAdapter
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.databinding.ItemProdutBinding
 
-class ItemAdapter(private val list: List<ProductEntity>) :
-    ListAdapter<ProductEntity, ItemViewHolder>(DiffCallBack()) {
+class ItemAdapter(
+    private val list: List<ProductEntity>,
+    private val onClickItem: (ProductEntity) -> Unit
+) : ListAdapter<ProductEntity, ItemViewHolder>(DiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
@@ -22,6 +24,7 @@ class ItemAdapter(private val list: List<ProductEntity>) :
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.setCardItem(list[position])
+        holder.clickedProduct(list[position], onClickItem)
     }
 
     override fun getItemCount() = list.size

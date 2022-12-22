@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.gusoliveira.data'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -38,12 +38,9 @@ dependencies {
     implementation dependencies.appCompact
     implementation dependencies.androidMaterial
     implementation dependencies.retrofit2Retrofit
-    //implementation dependencies.retrofit2ConverterGson
     implementation dependencies.retrofit2ConverterMoshi
     implementation dependencies.moshiKotlin
 
     def testDependencies = rootProject.ext.testDependencies
-    //implementation testDependencies.testJunit
-    //implementation testDependencies.androidTestExtJunit
     implementation testDependencies.androidTestEspressoCore
 }
