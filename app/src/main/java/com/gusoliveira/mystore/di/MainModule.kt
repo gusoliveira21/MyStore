@@ -3,6 +3,8 @@ package com.gusoliveira.mystore.di
 import androidx.navigation.NavController
 import com.gusoliveira.data.api.MyStoreService
 import com.gusoliveira.data.api.RetrofitInitializer
+import com.gusoliveira.data.auth.AuthInitializer
+import com.gusoliveira.data.auth.AuthService
 import com.gusoliveira.data.repository.MyStoreRepositoryImpl
 import com.gusoliveira.domain.repository.MyStoreRepository
 import com.gusoliveira.domain.usecase.GetAllProductsUseCase
@@ -26,6 +28,8 @@ import org.koin.dsl.module
 val mainModule = module {
     // Services
     single<MyStoreService> { RetrofitInitializer().getRetrofitService() }
+
+    single<AuthService> { AuthInitializer().authService }
 
     // Repositories
     single<MyStoreRepository> { MyStoreRepositoryImpl(get()) }
