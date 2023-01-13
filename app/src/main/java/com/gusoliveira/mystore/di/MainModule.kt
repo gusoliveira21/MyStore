@@ -3,11 +3,16 @@ package com.gusoliveira.mystore.di
 import androidx.navigation.NavController
 import com.gusoliveira.data.api.MyStoreService
 import com.gusoliveira.data.api.RetrofitInitializer
+import com.gusoliveira.data.auth_aws.AuthInitializer
+import com.gusoliveira.data.auth_aws.AuthService
+import com.gusoliveira.data.repository.AuthRepositoryImpl
 import com.gusoliveira.data.repository.MyStoreRepositoryImpl
+import com.gusoliveira.domain.repository.AuthRepository
 import com.gusoliveira.domain.repository.MyStoreRepository
-import com.gusoliveira.domain.usecase.GetAllProductsUseCase
-import com.gusoliveira.domain.usecase.GetCategoriesUseCase
-import com.gusoliveira.domain.usecase.GetProductsByCategoryUseCase
+import com.gusoliveira.domain.usecase.authMethods.RegisterUserUseCase
+import com.gusoliveira.domain.usecase.productMethods.GetAllProductsUseCase
+import com.gusoliveira.domain.usecase.productMethods.GetCategoriesUseCase
+import com.gusoliveira.domain.usecase.productMethods.GetProductsByCategoryUseCase
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModel
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModelImpl
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
@@ -27,8 +32,12 @@ val mainModule = module {
     // Services
     single<MyStoreService> { RetrofitInitializer().getRetrofitService() }
 
+    single<AuthService> { AuthInitializer().authService }
+
     // Repositories
     single<MyStoreRepository> { MyStoreRepositoryImpl(get()) }
+
+    single<AuthRepository> { AuthRepositoryImpl(get()) }
 
     factory { GetAllProductsUseCase(get()) }
 
@@ -36,7 +45,14 @@ val mainModule = module {
 
     factory { GetProductsByCategoryUseCase(get()) }
 
+    factory { RegisterUserUseCase(get()) }
+
     factory { (navController: NavController) -> Router(navController) }
+
+
+
+
+
 
     viewModel<HomeViewModel> { HomeViewModelImpl(get()) }
 
