@@ -1,4 +1,4 @@
-package com.gusoliveira.domain.usecase
+package com.gusoliveira.domain.usecase.productMethods
 
 import com.gusoliveira.domain.repository.MyStoreRepository
 import com.gusoliveira.domain.usecase.base.BaseUseCase
