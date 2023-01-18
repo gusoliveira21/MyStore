@@ -37,12 +37,13 @@ dependencies {
     implementation dependencies.core
     implementation dependencies.appCompact
     implementation dependencies.androidMaterial
+
     implementation dependencies.retrofit2Retrofit
     implementation dependencies.retrofit2ConverterMoshi
+
     implementation dependencies.moshiKotlin
 
-    //todo: adicionar a lista de dependências
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //todo: depois de passaro AuthService para o Moshi, devo retirar essa dependência!
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     def testDependencies = rootProject.ext.testDependencies

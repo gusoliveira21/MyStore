@@ -14,3 +14,4 @@
 .cxx
 local.properties
 google-services.json
+data/src/main/java/com/gusoliveira/data/auth/aws_rota.kt

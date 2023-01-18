@@ -48,8 +48,8 @@ class LoginFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
         configureGoogleSignIn()
         setupUI()
+        auth()
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -67,6 +67,19 @@ class LoginFragment : Fragment() {
             }
         }
     }
+
+    fun auth() {
+        binding.btLogin.setOnClickListener {
+            viewModel.postUser(
+                "gustavo",
+                binding.inputEmail.text.toString(),
+                binding.inputPass.text.toString()
+            )
+        }
+
+
+    }
+
 
     private fun configureGoogleSignIn() {
         mGoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
