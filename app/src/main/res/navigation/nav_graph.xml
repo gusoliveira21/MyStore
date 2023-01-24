@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
     <action
         android:id="@+id/to_productDetailsFragment"
@@ -37,9 +37,4 @@
             android:name="product"
             app:argType="com.gusoliveira.domain.entities.objectProduct.ProductEntity" />
     </fragment>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.gusoliveira.mystore.ui.login.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login"/>
 </navigation>

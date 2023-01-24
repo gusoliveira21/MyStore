@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
-import com.gusoliveira.domain.usecase.GetCategoriesUseCase
+import com.gusoliveira.domain.usecase.productMethods.GetCategoriesUseCase
 import com.gusoliveira.mystore.ui.router.Router
 import kotlinx.coroutines.launch
 

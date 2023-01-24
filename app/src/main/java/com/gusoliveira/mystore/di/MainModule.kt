@@ -3,9 +3,6 @@ package com.gusoliveira.mystore.di
 import androidx.navigation.NavController
 import com.gusoliveira.data.api.MyStoreService
 import com.gusoliveira.data.api.RetrofitInitializer
-import com.gusoliveira.data.auth_aws.AuthInitializer
-import com.gusoliveira.data.auth_aws.AuthService
-import com.gusoliveira.data.repository.AuthRepositoryImpl
 import com.gusoliveira.data.repository.MyStoreRepositoryImpl
 import com.gusoliveira.domain.repository.AuthRepository
 import com.gusoliveira.domain.repository.MyStoreRepository
@@ -17,7 +14,6 @@ import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewM
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModelImpl
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModelImpl
-import com.gusoliveira.mystore.ui.login.viewModel.LoginViewModel
 import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModel
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModelImpl
@@ -32,12 +28,8 @@ val mainModule = module {
     // Services
     single<MyStoreService> { RetrofitInitializer().getRetrofitService() }
 
-    single<AuthService> { AuthInitializer().authService }
-
     // Repositories
     single<MyStoreRepository> { MyStoreRepositoryImpl(get()) }
-
-    single<AuthRepository> { AuthRepositoryImpl(get()) }
 
     factory { GetAllProductsUseCase(get()) }
 
@@ -48,10 +40,6 @@ val mainModule = module {
     factory { RegisterUserUseCase(get()) }
 
     factory { (navController: NavController) -> Router(navController) }
-
-
-
-
 
 
     viewModel<HomeViewModel> { HomeViewModelImpl(get()) }
@@ -65,10 +53,6 @@ val mainModule = module {
     }
     viewModel<PurchaseDetailsViewModel> { (args: ProductDetailsFragmentArgs, navController: NavController) ->
         PurchaseDetailsViewModelImpl(args, get { parametersOf(navController) })
-    }
-
-    viewModel<LoginViewModel> { (navController: NavController) ->
-        (get { parametersOf(navController) })
     }
 
 }
