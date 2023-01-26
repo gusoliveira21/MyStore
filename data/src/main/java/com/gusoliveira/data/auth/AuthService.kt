@@ -7,6 +7,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface AuthService {
-    @POST(URL_CALL_PATH)
+    @POST("URL_CALL_PATH")
     fun registration(@Body registerData: RegisterModel): Call<ApiResponseCode>
 }

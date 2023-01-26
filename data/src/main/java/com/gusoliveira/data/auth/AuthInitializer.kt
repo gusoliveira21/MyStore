@@ -12,7 +12,7 @@ class AuthInitializer {
         .build()
 
     private val retrofit = Retrofit.Builder()
-            .baseUrl(URL_BASE)
+            .baseUrl("URL_BASE")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

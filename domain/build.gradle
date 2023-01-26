@@ -34,6 +34,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
     def dependencies = rootProject.ext.dependencies
     implementation dependencies.rxJava
+    implementation dependencies.coroutineCore
+    implementation dependencies.coroutineAndroid
 
     def testDependencies = rootProject.ext.testDependencies
     testImplementation testDependencies.testCoroutine
