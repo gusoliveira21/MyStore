@@ -21,4 +21,4 @@
 
 ## :pushpin: Tarefas em aberto:
 - [ ] Adicionar login.
-- [ ] Realizar design do fluxo.
+- [X] Criar design do fluxo de funcionamento do app.
