@@ -1,14 +1,18 @@
-package com.gusoliveira.domain.usecase.product
+package com.gusoliveira.domain.usecase.productMethods
 
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.domain.repository.MyStoreRepository
 import com.gusoliveira.domain.usecase.base.BaseUseCase
 
 class GetProductsByCategoryUseCase(private val myStoreRepository: MyStoreRepository) :
-    BaseUseCase<Nothing, List<ProductEntity>>() {
-    override suspend fun doWork(category: String): List<ProductEntity> {
-        return myStoreRepository.getProductsByCategory(category)
+    BaseUseCase<String, List<ProductEntity>>() {
+
+    override suspend fun doWork(value: String?): List<ProductEntity> {
+        return if (value != null) {
+            myStoreRepository.getProductsByCategory(value)
+        } else {
+            //TODO: é uma boa prática? se não, o que fazer?
+            listOf()
+        }
     }
-
-
 }

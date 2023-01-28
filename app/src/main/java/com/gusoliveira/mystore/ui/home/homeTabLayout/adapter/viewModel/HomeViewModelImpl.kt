@@ -3,7 +3,7 @@ package com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.gusoliveira.domain.usecase.product.GetCategoriesUseCase
+import com.gusoliveira.domain.usecase.productMethods.GetCategoriesUseCase
 import kotlinx.coroutines.launch
 
 class HomeViewModelImpl(

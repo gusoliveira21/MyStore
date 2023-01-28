@@ -37,4 +37,9 @@
             android:name="product"
             app:argType="com.gusoliveira.domain.entities.objectProduct.ProductEntity" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.gusoliveira.mystore.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
 </navigation>
