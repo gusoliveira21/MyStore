@@ -9,7 +9,6 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayoutTitle"
-        app:tabMode="scrollable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/show_categories"
@@ -18,17 +17,48 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tabGravity="center"
         app:tabIndicatorColor="@android:color/white"
-        app:tabIndicatorHeight="3dp"/>
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="scrollable" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayoutTitle"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintTop_toBottomOf="@+id/tabLayoutTitle" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
+            style="@style/ThemeOverlay.Material3.BottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/purple_500"
+            app:fabAlignmentMode="center"
+            app:fabCradleMargin="20dp"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:menu="@menu/bottom_menu"
+            app:navigationIcon="@drawable/ic_home" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_shopping_cart"
+            app:fabAnimationMode="slide"
+            app:layout_anchor="@id/bottom_app_bar" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
