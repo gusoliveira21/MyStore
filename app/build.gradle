@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.annotation:annotation:1.5.0'
 
@@ -57,17 +58,13 @@ dependencies {
     implementation dependencies.glide
     implementation dependencies.glideTransfor
     implementation dependencies.timber
-
-
     implementation dependencies.fireAnalytics
     implementation dependencies.fireBom
     implementation dependencies.fireUiAuth
     implementation dependencies.fireAuth
     implementation dependencies.fireCore
-    implementation dependencies.gmailAuth
+    implementation dependencies.fireGmailAuth
 
     def testDependencies = rootProject.ext.testDependencies
     implementation testDependencies.androidTestEspressoCore
-    //implementation testDependencies.testJunit
-    //implementation testDependencies.androidTestExtJunit
 }

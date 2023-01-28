@@ -1,5 +1,8 @@
 package com.gusoliveira.domain.repository
 
+import com.gusoliveira.domain.entities.auth.RegisterModel
+
 interface AuthRepository {
-    suspend fun register(name: String, email: String, password: String): String
+    suspend fun register(user: RegisterModel): Int
+
 }

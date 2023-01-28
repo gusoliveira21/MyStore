@@ -11,7 +11,6 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 32
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -32,21 +31,15 @@ android {
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
     def dependencies = rootProject.ext.dependencies
-    implementation dependencies.kotlin
     implementation dependencies.rxJava
-    //implementation dependencies.koin
     implementation dependencies.coroutineCore
     implementation dependencies.coroutineAndroid
 
-    /*Testing libraries*/
     def testDependencies = rootProject.ext.testDependencies
     testImplementation testDependencies.testCoroutine
     testImplementation testDependencies.testJunit
     testImplementation testDependencies.testMockk
-//    testImplementation testDependencies.testMockitoCore
     testImplementation testDependencies.testAssertkJvm
-//    testImplementation testDependencies.androidTestCoroutine
 }
-//sourceCompatibility = JavaVersion.VERSION_1_8
-//targetCompatibility = JavaVersion.VERSION_1_8

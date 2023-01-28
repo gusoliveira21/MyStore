@@ -2,41 +2,23 @@ ext {
     coreVersion = "1.7.0"
     appCompactVersion = "1.5.1"
     androidMaterialVersion = "1.6.1"
-
     constraintlayout = "2.1.4"
     lifecycle = "2.5.1"
-
     kotlinVersion = '1.3.21'
     buildTools = '3.4.0-beta04'
-
-    //Rx
     rxJavaVersion = '2.2.7'
     rxKotlinVersion = '2.2.0'
     rxAndroidVersion = '2.1.1'
-
-    //Coroutines
     coroutineVersion = '1.4.3'
-
-    //Koin
     koinVersion = "3.2.0"
-
-    //Retrofit
     retrofit2 = "2.9.0"
-
-    //navigation
     navFragVersion = "2.5.2"
     navUiVersion = "2.5.2"
-
-    //Glide
     glideVersion = "4.12.0"
     glideTransforVersion = "4.3.0"
-
-    //Moshi
     moshiVersion = "2.4.0"
     moshiKotlinVersion = "1.12.0"
-
     timberVersion = "4.5.1"
-
     scalifiedFabVersion = "1.1.3"
 
     dependencies = [
@@ -51,9 +33,11 @@ ext {
             core                   : "androidx.core:core-ktx:$coreVersion",
             appCompact             : "androidx.appcompat:appcompat:$appCompactVersion",
             androidMaterial        : "com.google.android.material:material:$androidMaterialVersion",
+
             retrofit2Retrofit      : "com.squareup.retrofit2:retrofit:$retrofit2",
             moshiKotlin            : "com.squareup.moshi:moshi-kotlin:$moshiKotlinVersion",
             retrofit2ConverterMoshi: "com.squareup.retrofit2:converter-moshi:$moshiVersion",
+
             constraintlayout       : "androidx.constraintlayout:constraintlayout:$constraintlayout",
             lifecycleLivedataKtx   : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle",
             lifecycleViewmodelKtx  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle",
@@ -69,8 +53,7 @@ ext {
             fireBom                : 'com.google.firebase:firebase-bom:0.25.0',
             fireAuth               : 'com.google.firebase:firebase-auth:16.1.0',
             fireCore               : 'com.google.firebase:firebase-core:16.0.4',
-            gmailAuth              : 'com.google.android.gms:play-services-auth:16.0.4',
-            facebookSdk            : 'com.facebook.android:facebook-android-sdk:4.41.0', //n usado
+            fireGmailAuth              : 'com.google.android.gms:play-services-auth:16.0.4',
     ]
 
     junitVersion = "4.13.2"
@@ -82,11 +65,11 @@ ext {
 
     testDependencies = [
             testCoroutine            : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion",
+            androidTestCoroutine     : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion",
             testJunit                : "junit:junit:$junitVersion",
             testMockk                : "io.mockk:mockk:$mockkVersion",
             testMockitoCore          : "org.mockito:mockito-core:$mockkCoreVersion",
             testAssertkJvm           : "com.willowtreeapps.assertk:assertk-jvm:$assertkVersion",
-            androidTestCoroutine     : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion",
             androidTestExtJunit      : "androidx.test.ext:junit:$testExtJunitVersion",
             androidTestEspressoCore  : "androidx.test.espresso:espresso-core:$espressoCoreVersion",
             androidTestKoinTest      : "io.insert-koin:koin-test:$koinVersion",
