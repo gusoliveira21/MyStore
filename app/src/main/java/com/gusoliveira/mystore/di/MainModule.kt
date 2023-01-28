@@ -9,10 +9,14 @@ import com.gusoliveira.data.repository.AuthRepositoryImpl
 import com.gusoliveira.data.repository.MyStoreRepositoryImpl
 import com.gusoliveira.domain.repository.AuthRepository
 import com.gusoliveira.domain.repository.MyStoreRepository
-import com.gusoliveira.domain.usecase.authMethods.RegisterUserUseCase
+import com.gusoliveira.domain.usecase.authMethods.RegisterUserUseCase/*
 import com.gusoliveira.domain.usecase.product.GetAllProductsUseCase
-import com.gusoliveira.domain.usecase.product.GetCategoriesUseCase
-import com.gusoliveira.domain.usecase.product.GetProductsByCategoryUseCase
+import com.gusoliveira.domain.usecase.product.GetCa//GetCategoriesUseCase
+import com.gusoliveira.domain.usecase.product.GetProductsByCategoryUseCase*/
+
+/*import com.gusoliveira.domain.usecase.productMethods.GetAllProductsUseCase
+import com.gusoliveira.domain.usecase.productMethods.GetCategoriesUseCase
+import com.gusoliveira.domain.usecase.productMethods.GetProductsByCategoryUseCase*/
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModel
 import com.gusoliveira.mystore.ui.home.homeTabLayout.adapter.viewModel.HomeViewModelImpl
 import com.gusoliveira.mystore.ui.home.productViewPager.viewModel.ProductViewModel
@@ -40,7 +44,10 @@ val mainModule = module {
     factory<AuthRepository>{ AuthRepositoryImpl(get()) }
     single<AuthService> { AuthInitializer().authService }
 
+    factory { RegisterUserUseCase(get()) }
+
     factory { (navController: NavController) -> Router(navController) }
+
 
     viewModel<HomeViewModel> { HomeViewModelImpl(get()) }
     viewModel<ProductViewModel> { (navController: NavController) ->
@@ -54,4 +61,5 @@ val mainModule = module {
         PurchaseDetailsViewModelImpl(args, get { parametersOf(navController) })
     }
     viewModel<LoginViewModel> { LoginViewModelImpl(get())}
+
 }

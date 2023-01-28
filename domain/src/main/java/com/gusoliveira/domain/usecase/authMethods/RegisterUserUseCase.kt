@@ -26,3 +26,4 @@ class RegisterUserUseCase(private val authRepository: AuthRepository) :
 203 - sucesso ao cadastrar
 400 - Falta parametro
  */
+
