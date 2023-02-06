@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
         observer()
     }
 
-    private fun setup(categories: List<String>) {
+    private fun setupViewPager(categories: List<String>) {
         pager = binding.pager
         tab = binding.tabLayoutTitle
         pagerAdapter = PagerAdapter(this)
@@ -49,6 +49,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun observer() {
-        viewModel.categories.observe(viewLifecycleOwner, Observer(::setup))
+        viewModel.categories.observe(viewLifecycleOwner, Observer(::setupViewPager))
     }
 }
