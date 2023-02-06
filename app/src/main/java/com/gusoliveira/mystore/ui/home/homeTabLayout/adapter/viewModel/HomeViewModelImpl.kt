@@ -9,6 +9,7 @@ import kotlinx.coroutines.launch
 class HomeViewModelImpl(
     private val getCategoriesUseCase: GetCategoriesUseCase,
 ) : HomeViewModel() {
+
     override val categories = MutableLiveData<List<String>>()
     override val errorCategories = MutableLiveData<String>()
 

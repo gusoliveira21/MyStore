@@ -18,7 +18,7 @@ class ItemViewHolder(private val binding: ItemProdutBinding) :
     fun clickedProduct(product: ProductEntity, onClickItem: (ProductEntity) -> Unit) {
         binding.cardview.setOnClickListener { onClickItem(product) }
     }
-
+//TODO: mudar setCardItem para setupCardItem
     fun setCardItem(product: ProductEntity) {
         binding.idNameProduct.text = product.title
         binding.idPriceProduct.text = "R$ " + product.price

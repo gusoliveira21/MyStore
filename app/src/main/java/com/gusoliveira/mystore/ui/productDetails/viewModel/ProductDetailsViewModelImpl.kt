@@ -6,6 +6,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.textview.MaterialTextView
 import com.google.firebase.auth.FirebaseAuth
+import com.gusoliveira.domain.entities.objectProduct.ListProductEntity
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.databinding.FragmentProductDetailsBinding
 import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
@@ -48,6 +49,8 @@ class ProductDetailsViewModelImpl(
     }
 
     override fun buy() {
+        //TODO: Leva para o checkout o produto atual ou a lista de produtos que quer comprar
+        router.toCheckout(ListProductEntity(listOf(args.product)))
         //verifica se esta logado
         //sim -> tela de detalhes da compra
         //não -> faça login
@@ -61,5 +64,5 @@ class ProductDetailsViewModelImpl(
 
         }
     }
-
+//MODEL: HGB10R
 }

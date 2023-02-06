@@ -32,7 +32,7 @@ class ProductViewModelImpl(
 
     override fun getProductFailed() {
         this.errorProduct.value = "Erro ao obter produtos"
-        Log.e("log", "Erro ao obter produtos")
+        Log.e("log", "ProductViewModelImpl: Erro no getProductFailed() ao obter produtos")
     }
 
 }

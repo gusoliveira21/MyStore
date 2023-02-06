@@ -22,6 +22,7 @@ import com.gusoliveira.mystore.ui.login.viewModel.LoginViewModelImpl
 import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModel
 import com.gusoliveira.mystore.ui.productDetails.viewModel.ProductDetailsViewModelImpl
+import com.gusoliveira.mystore.ui.purchase.purchaseDetails.PurchaseDetailsFragmentArgs
 import com.gusoliveira.mystore.ui.purchase.purchaseDetails.viewModel.PurchaseDetailsViewModel
 import com.gusoliveira.mystore.ui.purchase.purchaseDetails.viewModel.PurchaseDetailsViewModelImpl
 import com.gusoliveira.mystore.ui.router.Router
@@ -50,7 +51,7 @@ val mainModule = module {
                                              navController: NavController) ->
         ProductDetailsViewModelImpl(args, get { parametersOf(navController) })
     }
-    viewModel<PurchaseDetailsViewModel> { (args: ProductDetailsFragmentArgs, navController: NavController) ->
+    viewModel<PurchaseDetailsViewModel> { (args: PurchaseDetailsFragmentArgs, navController: NavController) ->
         PurchaseDetailsViewModelImpl(args, get { parametersOf(navController) })
     }
     viewModel<LoginViewModel> { LoginViewModelImpl(get())}

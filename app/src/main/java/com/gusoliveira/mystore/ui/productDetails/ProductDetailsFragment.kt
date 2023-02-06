@@ -33,6 +33,7 @@ class ProductDetailsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        //TODO: Colocar a lógica de configurar os elementos da tela aqui
         viewModel.setProduct(binding)
         checkoutProduct()
         listeners()
