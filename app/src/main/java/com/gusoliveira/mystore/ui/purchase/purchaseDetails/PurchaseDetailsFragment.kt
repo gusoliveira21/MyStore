@@ -1,7 +1,6 @@
 package com.gusoliveira.mystore.ui.purchase.purchaseDetails
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +13,10 @@ import com.gusoliveira.domain.entities.objectProduct.ListProductEntity
 import com.gusoliveira.mystore.databinding.FragmentPurchaseDetailsBinding
 import com.gusoliveira.mystore.ui.purchase.purchaseDetails.adapter.PurchaseDetailsAdapter
 import com.gusoliveira.mystore.ui.purchase.purchaseDetails.viewModel.PurchaseDetailsViewModel
+import com.gusoliveira.mystore.util.formatCurrency.Format.Companion.formatCurrency
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import java.text.Format
 
 class PurchaseDetailsFragment : Fragment() {
     private val args: PurchaseDetailsFragmentArgs by navArgs()
@@ -45,16 +46,20 @@ class PurchaseDetailsFragment : Fragment() {
 
     private fun observer() {
         viewModel.productPurchase.observe(viewLifecycleOwner, Observer(::setProduct))
+        viewModel.productTotalValue.observe(viewLifecycleOwner, Observer(::setTotalValue))
     }
 
-    private fun setProduct(listproductPurchase:ListProductEntity){
+    private fun setProduct(listproductPurchase: ListProductEntity) {
         setupRecyclerView(listproductPurchase)
     }
 
-    private fun setupRecyclerView(listproductPurchase: ListProductEntity) {
-        binding.rvPurchaseProducts.layoutManager = LinearLayoutManager(context)
-        binding.rvPurchaseProducts.adapter = PurchaseDetailsAdapter(listproductPurchase)
+    private fun setTotalValue(totalValue: Double) {
+        binding.textTotalValue.text = formatCurrency(totalValue)
     }
 
 
+    private fun setupRecyclerView(listProductPurchase: ListProductEntity) {
+        binding.rvPurchaseProducts.layoutManager = LinearLayoutManager(context)
+        binding.rvPurchaseProducts.adapter = PurchaseDetailsAdapter(listProductPurchase)
+    }
 }

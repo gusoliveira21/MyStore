@@ -6,6 +6,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.gusoliveira.domain.entities.objectProduct.ProductEntity
 import com.gusoliveira.mystore.databinding.ItemProductPurchaseBinding
+import com.gusoliveira.mystore.util.formatCurrency.Format
+import com.gusoliveira.mystore.util.formatCurrency.Format.Companion.formatCurrency
 import jp.wasabeef.glide.transformations.CropSquareTransformation
 
 class PurchaseDetailsViewHolder(private val binding: ItemProductPurchaseBinding) :
@@ -13,7 +15,7 @@ class PurchaseDetailsViewHolder(private val binding: ItemProductPurchaseBinding)
 
         fun setupCardItemPurchase(product: ProductEntity){
             binding.idNameProduct.text = product.title
-            binding.idPriceProduct.text = "R$ " + product.price
+            binding.idPriceProduct.text = formatCurrency(product.price)
             setImage(product.image, binding.idImageProduct)
         }
 
@@ -24,5 +26,4 @@ class PurchaseDetailsViewHolder(private val binding: ItemProductPurchaseBinding)
                 .apply(RequestOptions.bitmapTransform(CropSquareTransformation()))
                 .into(imageSource)
         }
-        
 }

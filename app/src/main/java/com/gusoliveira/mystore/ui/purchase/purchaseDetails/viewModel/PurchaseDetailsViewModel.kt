@@ -9,6 +9,8 @@ import com.gusoliveira.mystore.ui.productDetails.ProductDetailsFragmentArgs
 abstract class PurchaseDetailsViewModel : ViewModel() {
 
     abstract val productPurchase: LiveData<ListProductEntity>
+
+    abstract val productTotalValue: LiveData<Double>
     abstract fun confirmDeliveryAddress()
     abstract fun confirmCpf()
     abstract fun confirmPaymentMethod()

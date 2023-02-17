@@ -26,6 +26,16 @@
             tools:itemCount="3"/>
 
         <TextView
+            android:id="@+id/text_total_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="25sp"
+            tools:text="R$45,65"
+            app:layout_constraintTop_toBottomOf="@id/rv_purchase_products"
+            app:layout_constraintEnd_toEndOf="@id/rv_purchase_products"/>
+
+        <TextView
             android:id="@+id/text_endereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +44,7 @@
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_purchase_products"/>
+            app:layout_constraintTop_toBottomOf="@id/text_total_value"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/id_endereco"
