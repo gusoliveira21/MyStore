@@ -1,5 +1,6 @@
 package com.gusoliveira.mystore.di
 
+import MockApiService
 import androidx.navigation.NavController
 import com.gusoliveira.data.api.MyStoreService
 import com.gusoliveira.data.api.RetrofitInitializer
@@ -36,7 +37,8 @@ val mainModule = module {
     single<AuthService> { AuthInitializer().authService }
 
     single<MyStoreRepository> { MyStoreRepositoryImpl(get()) }
-    single<MyStoreService> { RetrofitInitializer().getRetrofitService() }
+    /**single<MyStoreService> { RetrofitInitializer().getRetrofitService() } <- desativado para usar mock */
+    single<MyStoreService> { MockApiService()} /** <- mock */
     factory { GetAllProductsUseCase(get()) }
     factory { GetCategoriesUseCase(get()) }
     factory { GetProductsByCategoryUseCase(get()) }
