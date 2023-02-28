@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,89 +9,163 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_purchase_products"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:listitem="@layout/item_product_purchase"
-            tools:itemCount="3"/>
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/text_total_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:textSize="25sp"
-            tools:text="R$45,65"
-            app:layout_constraintTop_toBottomOf="@id/rv_purchase_products"
-            app:layout_constraintEnd_toEndOf="@id/rv_purchase_products"/>
-
-        <TextView
-            android:id="@+id/text_endereco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Endereço"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_total_value"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/id_endereco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="ENDEREÇO COMPLETO MOSTRADO AQUI"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_endereco"/>
-        <RadioGroup
-            android:id="@+id/id_radio_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/id_endereco">
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/id_radio_button_pix"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_purchase_products"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pix"/>
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/id_radio_button_credcard"
+                android:layout_margin="16dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_product_purchase" />
+
+            <TextView
+                android:id="@+id/text_total_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@id/rv_purchase_products"
+                app:layout_constraintTop_toBottomOf="@id/rv_purchase_products"
+                tools:text="R$45,65" />
+
+            <TextView
+                android:id="@+id/text_endereco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cartão"/>
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/id_radio_button_boleto"
+                android:layout_margin="16dp"
+                android:text="Endereço"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_total_value" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/id_endereco"
+                style="@style/Widget.Material3.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Boleto"/>
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:elevation="18dp"
+                android:focusable="true"
+                android:text="ENDEREÇO COMPLETO MOSTRADO AQUI"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_endereco" />
 
-        </RadioGroup>
+            <RadioGroup
+                android:id="@+id/id_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_endereco">
 
-        <Button
-            android:id="@+id/id_bt_buy_confirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:textSize="20dp"
-            android:text="comprar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/id_radio_button_pix"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pix" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/id_radio_button_credcard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cartão" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/id_radio_button_boleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Boleto" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/id_bt_buy_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:text="comprar"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_radio_group" />
+
+
+
+            <TextView
+                android:id="@+id/textt_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selecione um endereço"
+                android:textSize="16sp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:layout_constraintTop_toBottomOf="@id/id_bt_buy_confirm"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_enderecos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintTop_toBottomOf="@id/textt_endereco"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Endereço 1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Endereço 2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Endereço 3"/>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Adicionar endereço"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </ScrollView>
 </FrameLayout>
