@@ -3,30 +3,6 @@ import com.gusoliveira.data.model.itemProduct.ItemProduct
 import com.gusoliveira.data.model.itemProduct.Rating
 
 class MockApiService : MyStoreService {
-
-/*de que modo posso configurar este codigo
-    private val retrofit: Retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl("https://fakestoreapi.com/")
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .build()
-    }
-
-para que quando essa rota seja acessada
-
-    @GET("products/category/{id}")
-    suspend fun getProductsByCategory(@Path("id") params: String): List<ItemProduct>
-
-ele retorne esses dados mockados?
-
-    val listCategories = listOf(
-    "electronics",
-    "jewelery",
-    "men's clothing",
-    "women's clothing"
-)
-*/
-
     private val listElectronics = listOf(
         ItemProduct(
             9,
@@ -90,6 +66,66 @@ ele retorne esses dados mockados?
         ),
         ItemProduct(
             14,
+            "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+            999.99,
+            "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+            "electronics",
+            "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+            Rating(
+                rate = 2.2,
+                count = 140
+            )
+        ),
+        ItemProduct(
+            1412,
+            "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+            999.99,
+            "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+            "electronics",
+            "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+            Rating(
+                rate = 2.2,
+                count = 140
+            )
+        ),
+        ItemProduct(
+            11324,
+            "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+            999.99,
+            "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+            "electronics",
+            "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+            Rating(
+                rate = 2.2,
+                count = 140
+            )
+        ),
+        ItemProduct(
+            14554,
+            "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+            999.99,
+            "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+            "electronics",
+            "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+            Rating(
+                rate = 2.2,
+                count = 140
+            )
+        ),
+        ItemProduct(
+            7741,
+            "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+            999.99,
+            "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+            "electronics",
+            "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+            Rating(
+                rate = 2.2,
+                count = 140
+            )
+        ),
+        ItemProduct(
+            123774,
             "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
             999.99,
             "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
