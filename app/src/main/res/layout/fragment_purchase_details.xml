@@ -12,7 +12,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_purchase_products"
@@ -48,124 +48,156 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_total_value" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/id_endereco"
-                style="@style/Widget.Material3.Button"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:checkable="true"
                 android:clickable="true"
                 android:elevation="18dp"
                 android:focusable="true"
-                android:text="ENDEREÇO COMPLETO MOSTRADO AQUI"
-                android:textSize="20sp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="20:10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_endereco" />
-
-            <RadioGroup
-                android:id="@+id/id_radio_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/id_endereco">
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/id_radio_button_pix"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Pix" />
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/id_radio_button_credcard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Cartão" />
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/id_radio_button_boleto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Boleto" />
-
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/id_bt_buy_confirm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
-                android:text="comprar"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/id_radio_group" />
-
-
-
-            <TextView
-                android:id="@+id/textt_endereco"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Selecione um endereço"
-                android:textSize="16sp"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground"
-                app:layout_constraintTop_toBottomOf="@id/id_bt_buy_confirm"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_enderecos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                app:cardUseCompatPadding="true"
-                app:layout_constraintTop_toBottomOf="@id/textt_endereco"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/text_endereco"
+                tools:backgroundTint="@color/cardview_dark_background">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Endereço 1"/>
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Endereço 2"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Endereço:"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Endereço 3"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/id_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            tools:text="John Hardy Womens Legends Naga Gold e Silver Dragon Station Chain Bracelet" />
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Adicionar endereço"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
 
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_cep"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="CEP:"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/id_cep"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                tools:text="66813-385" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="Estado:"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/id_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                tools:text="Pará" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_city"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="Cidade:"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/id_city"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                tools:text="Belém" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_phone_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="Telefone:"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/id_phone_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                tools:text="(91)98515-8445" />
+
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </ScrollView>
 </FrameLayout>
